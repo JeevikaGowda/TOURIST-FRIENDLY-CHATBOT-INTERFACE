@@ -1,0 +1,867 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tourly - Travel agancy</title>
+
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+  
+  <link rel="stylesheet" href="../static/css/style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans|Roboto|Lato|Source+Sans+Pro|Playfair+Display|Fira+Sans|Caveat:wght@400;700&display=swap" rel="stylesheet">
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.1.0/simple-lightbox.min.css">
+
+
+  <!-- chatbot -->
+
+  <link rel="stylesheet" href="../static/css/style1.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google Fonts Link For Icons -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0" />
+  
+
+
+    <style>
+      
+      .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+          /* Ensure it's above other content */
+      }
+    </style>
+</head>
+
+<body id="top" style="background-color: #C5D1EB;" >
+
+
+  <header class="header" data-header style="background-color: #16001E; ">
+
+    <div class="overlay" data-overlay></div>
+
+    <div class="header-top">
+      <div class="container">
+
+        <a href="tel:+919875643901" class="helpline-box">
+
+          <div class="icon-box">
+            <ion-icon name="call-outline"></ion-icon>
+          </div>
+
+          <div class="wrapper">
+            <p class="helpline-title">For Further Inquires :</p>
+
+            <p class="helpline-number">+91 9875643901</p>
+          </div>
+
+        </a>
+
+        <a href="#" class="logo">
+          <img src="../static/images/logo-bg.png" alt="Tourly logo">
+        </a>
+
+        <div class="header-btn-group">
+
+          <button class="search-btn" aria-label="Search">
+            <ion-icon name="search"></ion-icon>
+          </button>
+
+          <button class="nav-open-btn" aria-label="Open Menu" data-nav-open-btn>
+            <ion-icon name="menu-outline"></ion-icon>
+          </button>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="header-bottom">
+      <div class="container">
+
+        <ul class="social-list">
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-youtube"></ion-icon>
+            </a>
+          </li>
+
+        </ul>
+
+        <nav class="navbar" data-navbar>
+
+          <div class="navbar-top">
+
+            <a href="#" class="logo">
+              <img src="../static/images/logo-blue.svg" alt="Tourly logo">
+            </a>
+
+            <button class="nav-close-btn" aria-label="Close Menu" data-nav-close-btn>
+              <ion-icon name="close-outline"></ion-icon>
+            </button>
+
+          </div>
+
+          <ul class="navbar-list">
+
+            <li><a href="{{ url_for('index') }}" class="navbar-link" data-nav-link>home</a></li>
+            <!-- <li><a href="#" class="navbar-link" data-nav-link>about us</a></li> -->
+            <li><a href="{{ url_for('render_destination') }}" class="navbar-link" data-nav-link>destination</a></li>
+            <li><a href="{{ url_for('render_package') }}#package" class="navbar-link" data-nav-link>packages</a></li>
+            <li><a href="{{ url_for('render_gallery') }}" class="navbar-link" data-nav-link>gallery</a></li>
+            <li><a href="#contact" class="navbar-link" data-nav-link>contact us</a></li>
+
+          </ul>
+
+        </nav>
+
+        <!-- Inside destination.html -->
+        <a href="{{ url_for('handle_booking') }}" class="btn btn-secondary">Book Now</a>
+
+      </div>
+    </div>
+
+  </header>
+
+
+  <div class="gallery" id="gallery" style="background-color: #C5D1EB;">
+    <div class="container">
+
+      <!-- <p class="section-subtitle">Photo Gallery</p> -->
+
+    <center><h2 class="h2 section-title" style="padding-top: 25vh; color:rgb(16, 18, 20);">Photo's From Travellers</h2></center>
+
+      <b><p class="section-text" style="padding-top: 3vh; color:rgb(16, 18, 20); font-size: large; font-family: 'Poppins'; text-align: center;">
+        Journeys are not just about the destinations; they are about the memories we create along the way. Each photograph in this gallery is a chapter in the story of adventure, discovery, and joy shared by fellow travelers like you. Let these images inspire your next unforgettable journey.
+      </p></b>
+
+
+      
+             
+
+
+
+
+      <section class="destination-section">
+        <section id ="mysore-palace">
+        <!-- <div class="container"> -->
+        <h2>Mysore Palace</h2>
+        <div class="image-gallery">
+          <figure class="image-card">
+            <img src="../static/images/mypa-1.jpg" alt="Mysore Palace - Grand Entrance">
+            <figcaption>Grand Entrance</figcaption>
+          </figure>
+          <figure class="image-card">
+            <img src="../static/images/mypa-2.jpg" alt="Mysore Palace - Durbar Hall">
+            <figcaption>Mysore palace</figcaption>
+          </figure>
+          <figure class="image-card">
+            <img src="../static/images/mypa-3.jpg" alt="Mysore Palace - जगनमोहन Palace (Jaganmohan Palace)">
+            <figcaption>Durbar Hall</figcaption>
+          </figure>
+          <figure class="image-card">
+            <img src="../static/images/mypa-4.jpg" alt="Mysore Palace - Illuminated Gardens">
+            <figcaption>Golden Throne</figcaption>
+          </figure>
+        </div><br><br>
+      </section>
+
+
+
+      <section id ="chamundeshwari-temple"></section>
+        <h2>Chamundeshwari Temple</h2><br>
+        <div class="image-gallery">
+          <figure class="image-card">
+            <img src="../static/images/cha-1.jpg" alt="cha - Grand Entrance">
+            <figcaption>Mysore Chamundi Hill</figcaption>
+          </figure>
+          <figure class="image-card">
+            <img src="../static/images/cha-3.jpg" alt="cha - Durbar Hall">
+            <figcaption>Mahishasura</figcaption>
+          </figure>
+          <figure class="image-card">
+            <img src="../static/images/cha-5.jpg" alt="cha - जगनमोहन Palace (Jaganmohan Palace)">
+            <figcaption>Basava god</figcaption>
+          </figure>
+          <figure class="image-card">
+            <img src="../static/images/cha-7.jpg" alt="cha - Illuminated Gardens">
+            <figcaption>Chamundeshwari devi</figcaption>
+          </figure>
+        </div>
+      </section>
+
+
+      <section id ="krs-dam"></section>
+      <center><h2>KRS DAM</h2></center>
+      <br>
+      <div class="image-gallery">
+        <figure class="image-card">
+          <img src="../static/images/krs-1.jpg" alt="cha - Grand Entrance">
+          <figcaption>KRS Dam</figcaption>
+        </figure>
+        <figure class="image-card">
+          <img src="../static/images/krs-3.jpg" alt="cha - Durbar Hall">
+          <figcaption>Dam Gates</figcaption>
+        </figure>
+        <figure class="image-card">
+          <img src="../static/images/krs-5.jpg" alt="cha - जगनमोहन Palace (Jaganmohan Palace)">
+          <figcaption>Night view</figcaption>
+        </figure>
+        <figure class="image-card">
+          <img src="../static/images/krs-7.jpg" alt="cha - Illuminated Gardens">
+          <figcaption>Drone View</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id ="Philomena-Church"></section>
+  <center><h2>Philomena Church</h2></center><br>
+    <div class="image-gallery">
+      <figure class="image-card">
+        <img src="../static/images/phi-2.jpg" alt="cha - Grand Entrance">
+        <figcaption>Philomena Church</figcaption>
+      </figure>
+      <figure class="image-card">
+        <img src="../static/images/phi-3.jpg" alt="cha - Durbar Hall">
+        <figcaption>Inside View</figcaption>
+      </figure>
+      <figure class="image-card">
+        <img src="../static/images/phi-6.jpg" alt="cha - जगनमोहन Palace (Jaganmohan Palace)">
+        <figcaption>Full View</figcaption>
+      </figure>
+      <figure class="image-card">
+        <img src="../static/images/phi-1.jpeg" alt="cha - Illuminated Gardens">
+        <figcaption>Outside View</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- <section id ="chamundeshwari-temple"></section>
+<center><h2>Chamundeshwari Temple</h2></center><br>
+  <div class="image-gallery">
+    <figure class="image-card">
+      <img src="../static/images/cha-1.jpg" alt="cha - Grand Entrance">
+      <figcaption>Grand Entrance</figcaption>
+    </figure>
+    <figure class="image-card">
+      <img src="../static/images/cha-3.jpg" alt="cha - Durbar Hall">
+      <figcaption>Durbar Hall</figcaption>
+    </figure>
+    <figure class="image-card">
+      <img src="../static/images/cha-5.jpg" alt="cha - जगनमोहन Palace (Jaganmohan Palace)">
+      <figcaption>Jaganmohan Palace</figcaption>
+    </figure>
+    <figure class="image-card">
+      <img src="../static/images/cha-7.jpg" alt="cha - Illuminated Gardens">
+      <figcaption>Illuminated Gardens</figcaption>
+    </figure>
+  </div>
+</section> -->
+
+
+<section id ="Ranganathittu-Bird-Sanctuary"></section>
+<center><h2>Ranganathittu Bird Sanctuary</h2></center><br>
+<div class="image-gallery">
+  <figure class="image-card">
+    <img src="../static/images/rang-1.jpg" alt="cha - Grand Entrance">
+    <figcaption>yellow-billed-stork</figcaption>
+  </figure>
+  <figure class="image-card">
+    <img src="../static/images/rang-3.jpg" alt="cha - Durbar Hall">
+    <figcaption>stork</figcaption>
+  </figure>
+  <figure class="image-card">
+    <img src="../static/images/rang-5.jpg" alt="cha - जगनमोहन Palace (Jaganmohan Palace)">
+    <figcaption>Flock of stork</figcaption>
+  </figure>
+  <figure class="image-card">
+    <img src="../static/images/rang-7.jpg" alt="cha - Illuminated Gardens">
+    <figcaption>Crocodile resting</figcaption>
+  </figure>
+</div>
+</section>
+
+
+<section id ="Jaganmohan-Palace"></section>
+<center><h2>Jaganmohan Palace and Art Gallery
+</h2></center><br>
+<div class="image-gallery">
+  <figure class="image-card">
+    <img src="../static/images/jag-1.jpg" alt="cha - Grand Entrance">
+    <figcaption>Jaganmohan Palace</figcaption>
+  </figure>
+  <figure class="image-card">
+    <img src="../static/images/jag-3.jpg" alt="cha - Durbar Hall">
+    <figcaption>outside</figcaption>
+  </figure>
+  <figure class="image-card">
+    <img src="../static/images/jag-5.jpg" alt="cha - जगनमोहन Palace (Jaganmohan Palace)">
+    <figcaption>art gallery</figcaption>
+  </figure>
+  <figure class="image-card">
+    <img src="../static/images/jag-7.jpg" alt="cha - Illuminated Gardens">
+    <figcaption>art gallery hall</figcaption>
+  </figure>
+</div>
+</section>
+
+
+<section id ="Mysuru-zoo"></section>
+<center><h2>Mysuru Zoo</h2></center><br>
+<div class="image-gallery">
+  <figure class="image-card">
+    <img src="../static/images/zoo-1.jpg" alt="cha - Grand Entrance">
+    <figcaption>Entrance</figcaption>
+  </figure>
+  <figure class="image-card">
+    <img src="../static/images/zoo-3.jpg" alt="cha - Durbar Hall">
+    <figcaption> Leopard</figcaption>
+  </figure>
+  <figure class="image-card">
+    <img src="../static/images/zoo-5.jpg" alt="cha - जगनमोहन Palace (Jaganmohan Palace)">
+    <figcaption>Entrance</figcaption>
+  </figure>
+  <figure class="image-card">
+    <img src="../static/images/zoo-7.jpg" alt="cha - Illuminated Gardens">
+    <figcaption>Tiger</figcaption>
+  </figure>
+</div>
+</section>
+
+<section id ="brindavan"></section>
+  <center><h2>Brindavan Gardens</h2></center><br>
+    <div class="image-gallery">
+      <figure class="image-card">
+        <img src="../static/images/bri-1.jpg" alt="cha - Grand Entrance">
+        <figcaption>Philomena Church</figcaption>
+      </figure>
+      <figure class="image-card">
+        <img src="../static/images/bri-6.jpg" alt="cha - Durbar Hall">
+        <figcaption>Inside View</figcaption>
+      </figure>
+      <figure class="image-card">
+        <img src="../static/images/bri-5.jpg" alt="cha - जगनमोहन Palace (Jaganmohan Palace)">
+        <figcaption>Full View</figcaption>
+      </figure>
+      <figure class="image-card">
+        <img src="../static/images/bri-2.jpg" alt="cha - Illuminated Gardens">
+        <figcaption>Outside View</figcaption>
+      </figure>
+    </div>
+  </section>
+
+
+  <section id ="lalith"></section>
+  <center><h2>Lalitha Mahal Palace</h2></center><br>
+    <div class="image-gallery">
+      <figure class="image-card">
+        <img src="../static/images/la-2.jpg" alt="cha - Grand Entrance">
+        <figcaption>Philomena Church</figcaption>
+      </figure>
+      <figure class="image-card">
+        <img src="../static/images/la-3.jpg" alt="cha - Durbar Hall">
+        <figcaption>Inside View</figcaption>
+      </figure>
+      <figure class="image-card">
+        <img src="../static/images/la-6.jpg" alt="cha - जगनमोहन Palace (Jaganmohan Palace)">
+        <figcaption>Full View</figcaption>
+      </figure>
+      <figure class="image-card">
+        <img src="../static/images/la-1.jpg" alt="cha - Illuminated Gardens">
+        <figcaption>Outside View</figcaption>
+      </figure>
+    </div>
+  </section>
+
+
+
+  <section id ="karanji"></section>
+  <center><h2>Karanji Lake</h2></center><br>
+    <div class="image-gallery">
+      <figure class="image-card">
+        <img src="../static/images/kar-2.jpg" alt="cha - Grand Entrance">
+        <figcaption>Philomena Church</figcaption>
+      </figure>
+      <figure class="image-card">
+        <img src="../static/images/kar-3.jpg" alt="cha - Durbar Hall">
+        <figcaption>Inside View</figcaption>
+      </figure>
+      <figure class="image-card">
+        <img src="../static/images/kar-6.jpg" alt="cha - जगनमोहन Palace (Jaganmohan Palace)">
+        <figcaption>Full View</figcaption>
+      </figure>
+      <figure class="image-card">
+        <img src="../static/images/kar-1.jpg" alt="cha - Illuminated Gardens">
+        <figcaption>Outside View</figcaption>
+      </figure>
+    </div>
+  </section>
+
+
+  <section id ="melody"></section>
+  <center><h2>Melody World Wax Museum</h2></center><br>
+    <div class="image-gallery">
+      <figure class="image-card">
+        <img src="../static/images/wa-2.jpg" alt="cha - Grand Entrance">
+        <figcaption>Philomena Church</figcaption>
+      </figure>
+      <figure class="image-card">
+        <img src="../static/images/wa-5.jpg" alt="cha - Durbar Hall">
+        <figcaption>Inside View</figcaption>
+      </figure>
+      <figure class="image-card">
+        <img src="../static/images/wa-4.jpg" alt="cha - जगनमोहन Palace (Jaganmohan Palace)">
+        <figcaption>Full View</figcaption>
+      </figure>
+      <figure class="image-card">
+        <img src="../static/images/wa-7.jpg" alt="cha - Illuminated Gardens">
+        <figcaption>Outside View</figcaption>
+      </figure>
+    </div>
+  </section>
+
+
+  <section id ="grs"></section>
+  <center><h2>GRS Fantasy Park</h2></center><br>
+    <div class="image-gallery">
+      <figure class="image-card">
+        <img src="../static/images/grs-2.jpg" alt="cha - Grand Entrance">
+        <figcaption>Philomena Church</figcaption>
+      </figure>
+      <figure class="image-card">
+        <img src="../static/images/grs-3.jpg" alt="cha - Durbar Hall">
+        <figcaption>Inside View</figcaption>
+      </figure>
+      <figure class="image-card">
+        <img src="../static/images/grs-6.jpg" alt="cha - जगनमोहन Palace (Jaganmohan Palace)">
+        <figcaption>Full View</figcaption>
+      </figure>
+      <figure class="image-card">
+        <img src="../static/images/grs-1.jpg" alt="cha - Illuminated Gardens">
+        <figcaption>Outside View</figcaption>
+      </figure>
+    </div>
+  </section>
+   
+  <section id ="silk"></section>
+  <center><h2>Mysore Silk Factory</h2></center><br>
+    <div class="image-gallery">
+      <figure class="image-card">
+        <img src="../static/images/silk-2.jpg" alt="cha - Grand Entrance">
+        <figcaption>Philomena Church</figcaption>
+      </figure>
+      <figure class="image-card">
+        <img src="../static/images/silk-3.jpg" alt="cha - Durbar Hall">
+        <figcaption>Inside View</figcaption>
+      </figure>
+      <figure class="image-card">
+        <img src="../static/images/silk-6.jpg" alt="cha - जगनमोहन Palace (Jaganmohan Palace)">
+        <figcaption>Full View</figcaption>
+      </figure>
+      <figure class="image-card">
+        <img src="../static/images/silk-1.jpg" alt="cha - Illuminated Gardens">
+        <figcaption>Outside View</figcaption>
+      </figure>
+    </div>
+  </section>
+
+
+  <section id ="shiv"></section>
+  <center><h2>Shivanasamudra Falls</h2></center><br>
+    <div class="image-gallery">
+      <figure class="image-card">
+        <img src="../static/images/bara-1.jpeg" alt="cha - Grand Entrance">
+        <figcaption>Philomena Church</figcaption>
+      </figure>
+      <figure class="image-card">
+        <img src="../static/images/gaga-3.jpg" alt="cha - Durbar Hall">
+        <figcaption>Inside View</figcaption>
+      </figure>
+      <figure class="image-card">
+        <img src="../static/images/gaga-6.jpg" alt="cha - जगनमोहन Palace (Jaganmohan Palace)">
+        <figcaption>Full View</figcaption>
+      </figure>
+      <figure class="image-card">
+        <img src="../static/images/gaga-1.jpg" alt="cha - Illuminated Gardens">
+        <figcaption>Outside View</figcaption>
+      </figure>
+    </div>
+  </section>
+
+
+  <section id ="talakadu"></section>
+  <center><h2>Talakadu</h2></center><br>
+    <div class="image-gallery">
+      <figure class="image-card">
+        <img src="../static/images/tal-2.jpg" alt="cha - Grand Entrance">
+        <figcaption>Philomena Church</figcaption>
+      </figure>
+      <figure class="image-card">
+        <img src="../static/images/tal-3.jpg" alt="cha - Durbar Hall">
+        <figcaption>Inside View</figcaption>
+      </figure>
+      <figure class="image-card">
+        <img src="../static/images/tal-6.jpg" alt="cha - जगनमोहन Palace (Jaganmohan Palace)">
+        <figcaption>Full View</figcaption>
+      </figure>
+      <figure class="image-card">
+        <img src="../static/images/tal-1.jpg" alt="cha - Illuminated Gardens">
+        <figcaption>Outside View</figcaption>
+      </figure>
+    </div>
+  </section>
+
+
+  <section id ="melukote"></section>
+  <center><h2>Melukote</h2></center><br>
+    <div class="image-gallery">
+      <figure class="image-card">
+        <img src="../static/images/mel-2.jpg" alt="cha - Grand Entrance">
+        <figcaption>Philomena Church</figcaption>
+      </figure>
+      <figure class="image-card">
+        <img src="../static/images/mel-3.jpg" alt="cha - Durbar Hall">
+        <figcaption>Inside View</figcaption>
+      </figure>
+      <figure class="image-card">
+        <img src="../static/images/mel-6.jpg" alt="cha - जगनमोहन Palace (Jaganmohan Palace)">
+        <figcaption>Full View</figcaption>
+      </figure>
+      <figure class="image-card">
+        <img src="../static/images/mel-1.jpg" alt="cha - Illuminated Gardens">
+        <figcaption>Outside View</figcaption>
+      </figure>
+    </div>
+  </section>
+
+
+  <section id ="kabini"></section>
+  <center><h2>Kabini Backwaters</h2></center><br>
+    <div class="image-gallery">
+      <figure class="image-card">
+        <img src="../static/images/kab-2.jpg" alt="cha - Grand Entrance">
+        <figcaption>Philomena Church</figcaption>
+      </figure>
+      <figure class="image-card">
+        <img src="../static/images/kab-3.jpeg" alt="cha - Durbar Hall">
+        <figcaption>Inside View</figcaption>
+      </figure>
+      <figure class="image-card">
+        <img src="../static/images/kab-6.jpeg" alt="cha - जगनमोहन Palace (Jaganmohan Palace)">
+        <figcaption>Full View</figcaption>
+      </figure>
+      <figure class="image-card">
+        <img src="../static/images/kab-4.jpeg" alt="cha - Illuminated Gardens">
+        <figcaption>Outside View</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id ="br"></section>
+  <center><h2>Biligiri Rangaswamy Temple (B.R. Hills)</h2></center><br>
+    <div class="image-gallery">
+      <figure class="image-card">
+        <img src="../static/images/br-2.jpg" alt="cha - Grand Entrance">
+        <figcaption>Philomena Church</figcaption>
+      </figure>
+      <figure class="image-card">
+        <img src="../static/images/br-3.jpg" alt="cha - Durbar Hall">
+        <figcaption>Inside View</figcaption>
+      </figure>
+      <figure class="image-card">
+        <img src="../static/images/br-6.jpg" alt="cha - जगनमोहन Palace (Jaganmohan Palace)">
+        <figcaption>Full View</figcaption>
+      </figure>
+      <figure class="image-card">
+        <img src="../static/images/br-1.jpg" alt="cha - Illuminated Gardens">
+        <figcaption>Outside View</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id ="food"></section>
+  <center><h2>Foods</h2></center><br>
+    <div class="image-gallery">
+      <figure class="image-card">
+        <img src="../static/images/food-2.jpg" alt="cha - Grand Entrance">
+        <figcaption>Philomena Church</figcaption>
+      </figure>
+      <figure class="image-card">
+        <img src="../static/images/food-3.jpg" alt="cha - Durbar Hall">
+        <figcaption>Inside View</figcaption>
+      </figure>
+      <figure class="image-card">
+        <img src="../static/images/food-6.jpg" alt="cha - जगनमोहन Palace (Jaganmohan Palace)">
+        <figcaption>Full View</figcaption>
+      </figure>
+      <figure class="image-card">
+        <img src="../static/images/food-1.jpg" alt="cha - Illuminated Gardens">
+        <figcaption>Outside View</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id ="festivals"></section>
+  <center><h2>Festivals</h2></center><br>
+    <div class="image-gallery">
+      <figure class="image-card">
+        <img src="../static/images/fest-2.jpg" alt="cha - Grand Entrance">
+        <figcaption>Philomena Church</figcaption>
+      </figure>
+      <figure class="image-card">
+        <img src="../static/images/fest-10.jpg" alt="cha - Durbar Hall">
+        <figcaption>Inside View</figcaption>
+      </figure>
+      <figure class="image-card">
+        <img src="../static/images/fest-11.jpg" alt="cha - जगनमोहन Palace (Jaganmohan Palace)">
+        <figcaption>Full View</figcaption>
+      </figure>
+      <figure class="image-card">
+        <img src="../static/images/fest-13.jpeg" alt="cha - Illuminated Gardens">
+        <figcaption>Outside View</figcaption>
+      </figure>
+    </div>
+  </section>
+
+
+
+
+  </section>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+
+  
+
+  <!-- chatbot -->
+
+  <button class="chatbot-toggler">
+    <span class="material-symbols-rounded">mode_comment</span>
+    <span class="material-symbols-outlined">close</span>
+  </button>
+  <div class="chatbot">
+    <header>
+      <h2>Stella</h2>
+      <span class="close-btn material-symbols-outlined">close</span>
+    </header>
+    <ul class="chatbox">
+      <li class="chat incoming">
+        <span class="material-symbols-outlined">smart_toy</span>
+        <p>Hi, I'm Stella , your personal travel assistant!</p>
+        
+      </li>
+      <li class="chat incoming">
+        <span class="material-symbols-outlined">smart_toy</span>
+        <p>How can I help you today?</p>
+        
+      </li>
+    </ul>
+    <div class="chat-input">
+      <textarea placeholder="Enter a message..." spellcheck="false" required></textarea>
+      <span id="send-btn" class="material-symbols-rounded">send</span>
+    </div>
+  </div>
+
+
+  <!-- 
+        - #CTA
+      -->
+
+      <section class="cta" id="contact">
+        <div class="container">
+
+          <div class="cta-content">
+            <p class="section-subtitle">Call To Action</p>
+
+            <h2 class="h2 section-title">Ready For Unforgatable Travel. Remember Us!</h2>
+
+            <p class="section-text">
+              </p>
+          </div>
+
+          <button class="btn btn-secondary">Contact Us !</button>
+
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+   <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer">
+
+    <div class="footer-top">
+      <div class="container">
+
+        <div class="footer-brand">
+
+          <a href="#" class="logo">
+            <img src="../static/images/logo-bg.png" alt="Tourly logo">
+          </a>
+
+          <p class="footer-text">
+            
+          </p>
+
+        </div>
+
+        <div class="footer-contact">
+
+          <h4 class="contact-title">Contact Us</h4>
+
+          <p class="contact-text">
+            Feel free to contact and reach us !!
+          </p>
+
+          <ul>
+
+            <li class="contact-item">
+              <ion-icon name="call-outline"></ion-icon>
+
+              <a href="tel:+919875643901" class="contact-link">+91 9875643901</a>
+            </li>
+
+            <li class="contact-item">
+              <ion-icon name="mail-outline"></ion-icon>
+
+              <a href="mailto:info.tourly.com" class="contact-link">info.tourly.com</a>
+            </li>
+
+            <li class="contact-item">
+              <ion-icon name="location-outline"></ion-icon>
+
+              <address>560064 Bangalore, Karnataka</address>
+            </li>
+
+          </ul>
+
+        </div>
+
+        <div class="footer-form">
+
+          <p class="form-text">
+            Subscribe our newsletter for more update & news !!
+          </p>
+
+          <form action="" class="form-wrapper">
+            <input type="email" name="email" class="input-field" placeholder="Enter Your Email" required>
+
+            <button type="submit" class="btn btn-secondary">Subscribe</button>
+          </form>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+
+        <p class="copyright">
+          &copy; 2022 <a href="">codewithus</a>. All rights reserved
+        </p>
+
+        <ul class="footer-bottom-list">
+
+          <li>
+            <a href="#" class="footer-bottom-link">Privacy Policy</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-bottom-link">Term & Condition</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-bottom-link">FAQ</a>
+          </li>
+
+        </ul>
+
+      </div>
+    </div>
+
+  </footer>
+
+  
+
+
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.1.0/simple-lightbox.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+    const seeMoreButtons = document.querySelectorAll('.see-more');
+    seeMoreButtons.forEach(button => {
+        button.addEventListener('click', function (event) {
+            event.preventDefault();
+            const galleryId = this.getAttribute('data-gallery-id');
+            const galleryItems = document.querySelectorAll(`#${galleryId} .gallery-item a`);
+            const lightbox = new SimpleLightbox(galleryItems, {
+                widthRatio: 0.8,
+                heightRatio: 0.8,
+                captionDelay: 250,
+                disableScroll: false
+            });
+            lightbox.open();
+        });
+    });
+}); -->
+
+  <!-- </script> -->
+
+  <script>
+   window.addEventListener('load', () => {
+  const hash = window.location.hash;
+  if (hash) {
+    const section = document.querySelector(hash);
+    if (section) {
+      const headerHeight = document.querySelector('.header').offsetHeight; // Get the height of the fixed header
+      const offset = -headerHeight; // Adjust the offset value as needed
+
+      const scrollY = window.pageYOffset + section.getBoundingClientRect().top + offset;
+      window.scrollTo({ top: scrollY, behavior: 'smooth' });
+    }
+  }
+});
+  </script>
+
+
+
+<script src="../static/js/script1.js" defer></script>
+
+</body>
+
+</html>

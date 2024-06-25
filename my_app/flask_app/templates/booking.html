@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tourly - Travel agency</title>
+
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+  
+  <link rel="stylesheet" href="../static/css/style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans|Roboto|Lato|Source+Sans+Pro|Playfair+Display|Fira+Sans|Caveat:wght@400;700&display=swap" rel="stylesheet">
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.1.0/simple-lightbox.min.css">
+
+
+  <!-- chatbot -->
+
+  <!-- <link rel="stylesheet" href="../static/css/style1.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0" />
+  <script src="./static/js/script1.js" defer></script> -->
+
+
+
+    <style>
+    .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Ensure it's above other content */
+}
+
+.booking .container {
+      padding-top: 100px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .booking {
+      background-color: #C5D1EB;
+      padding: 200px 20px;
+      text-align: center;
+      width: 100%;
+    }
+
+    .form-container {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border: 2px solid #000; /* Border color */
+  background-color: #586994; /* Background color */
+  padding: 20px; /* Add padding for better spacing */
+  border-radius: 30px;
+    }
+    .form-row:last-child .form-group {
+  width: calc(50% - 20px);
+  max-width: calc(50% - 20px);
+}
+
+    .form-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 10px;
+      width: 100%;
+    }
+
+    .form-group {
+      flex: 0 0 calc(50% - 10px);
+      max-width: 300px;
+      padding: 5px 10px;
+      box-sizing: border-box;
+    }
+
+    .form-group.package,
+    .form-group.price {
+      flex: 0 0 calc(100% - 20px); /* Adjusted width */
+      max-width: calc(100% - 20px); /* Adjusted width */
+      background-color: transparent;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      text-align: center;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="number"],
+    .form-group input[type="tel"],
+    .form-group input[type="email"],
+    .form-group input[type="date"],
+    .form-group select {
+      width: 100%;
+      padding: 5px;
+      border: 1px solid #000;
+      border-radius: 10px;
+      background-color: #fff;
+      box-sizing: border-box;
+      font-size: 14px;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: #007bff;
+    }
+
+    .form-group input[type="date"] {
+      width: 100%;
+      padding: 5px;
+      font-size: 14px;
+      border: 1px solid #000;
+      border-radius: 10px;
+      background-color: #fff;
+    }
+
+    .form-group::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    @media (max-width: 780px) {
+      .form-group {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+    }
+
+    .btn-container {
+      text-align: center;
+      margin-top: 20px;
+      padding-top: 20px;
+      width: 100%;
+    }
+    .btn-container button {
+  margin: 0 auto;
+}
+
+
+
+
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.popup-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 30%;
+    text-align: center;
+    position: relative;
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+     
+    </style>
+</head>
+
+<body id="top" style="background-color: #C5D1EB;" >
+
+
+  <header class="header" data-header style="background-color: #16001E; z-index: 100; ">
+
+    <div class="overlay" data-overlay></div>
+
+    <div class="header-top">
+      <div class="container">
+
+        <a href="tel:+919875643901" class="helpline-box">
+
+          <div class="icon-box">
+            <ion-icon name="call-outline"></ion-icon>
+          </div>
+
+          <div class="wrapper">
+            <p class="helpline-title">For Further Inquires :</p>
+
+            <p class="helpline-number">+91 9875643901</p>
+          </div>
+
+        </a>
+
+        <a href="#" class="logo">
+          <img src="../static/images/logo-bg.png" alt="Tourly logo">
+        </a>
+
+        <div class="header-btn-group">
+
+          <button class="search-btn" aria-label="Search">
+            <ion-icon name="search"></ion-icon>
+          </button>
+
+          <button class="nav-open-btn" aria-label="Open Menu" data-nav-open-btn>
+            <ion-icon name="menu-outline"></ion-icon>
+          </button>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="header-bottom">
+      <div class="container">
+
+        <ul class="social-list">
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-youtube"></ion-icon>
+            </a>
+          </li>
+
+        </ul>
+
+        <nav class="navbar" data-navbar>
+
+          <div class="navbar-top">
+
+            <a href="#" class="logo">
+              <img src="../static/images/logo-blue.svg" alt="Tourly logo">
+            </a>
+
+            <button class="nav-close-btn" aria-label="Close Menu" data-nav-close-btn>
+              <ion-icon name="close-outline"></ion-icon>
+            </button>
+
+          </div>
+
+          <ul class="navbar-list">
+
+            <li><a href="{{ url_for('index') }}" class="navbar-link" data-nav-link>home</a></li>
+            <!-- <li><a href="#" class="navbar-link" data-nav-link>about us</a></li> -->
+            <li><a href="{{ url_for('render_destination') }}" class="navbar-link" data-nav-link>destination</a></li>
+            <li><a href="{{ url_for('render_package') }}#package" class="navbar-link" data-nav-link>packages</a></li>
+            <li><a href="{{ url_for('render_gallery') }}" class="navbar-link" data-nav-link>gallery</a></li>
+            <li><a href="#contact" class="navbar-link" data-nav-link>contact us</a></li>
+
+          </ul>
+
+        </nav>
+
+        <button class="btn btn-primary">Book Now</button>
+
+      </div>
+    </div>
+
+  </header>
+  
+
+  
+  <div class="booking" id="booking" style="background-color:#C5D1EB;">
+    <div class="container">
+      <h2 class="section-title">Booking Form</h2><br>
+      <div class="form-container">
+        <form class="bookingform" method="post" action="{{ url_for('handle_booking') }}">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="age">Age:</label>
+              <input type="number" id="age" name="age" required>
+            </div>
+          </div> 
+          <div class="form-row">
+            <div class="form-group">
+              <label for="mobile">Mobile No:</label>
+              <input type="tel" id="mobile" name="mobile" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="guests">No. of Guests</label>
+              <input type="number" id="guests" name="guests" required>
+            </div>
+            <div class="form-group">
+              <label for="availability">Availability:</label>
+              <input type="date" id="availability" name="availability" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group package">
+              <label for="package">Package:</label>
+              <select id="package" name="package" required>
+                <option value="package1"> Mysuru Day Trip: Unveiling The Royal City </option>
+                <option value="package2"> Mysuru Adventure: Unveiling The Wild Side </option>
+                <option value="package3"> Heritage Mysore: A Royal Retreat </option>
+                <option value="package4"> Mysorean Delights: A Culinary Journey </option>
+                <option value="package5"> Mysore For Families: Fun-Filled Exploration </option>
+                <option value="package6"> Mystical Mysore: Unveiling History & Nature </option>
+                <option value="package7"> Ayurvedic Escape: Rejuvenate In Mysore </option>
+                <option value="package8"> Mysuru Multisport Challenge </option>
+                <option value="package9"> Mysore Jungle & Water Adventure </option>
+               <option value="package10"> Mysuru Palace & Yoga Retreat </option>
+              <option value="package11"> Mysuru Heritage Trail & Night Adventure </option>
+          
+              </select>
+            </div>
+            <div class="form-group price">
+              <label for="price">Price:</label>
+              <input type="text" id="price" name="price" readonly>
+            </div>
+          </div>
+          <div class="btn-container">
+          <button type="submit" class="btn btn-primary">Make Your Reservation</button>
+        </div>
+        
+        </form>
+      </div>
+    </div>
+  </div>
+
+ 
+
+ <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+
+  
+
+  <!-- chatbot -->
+
+  <!-- <button class="chatbot-toggler">
+    <span class="material-symbols-rounded">mode_comment</span>
+    <span class="material-symbols-outlined">close</span>
+  </button>
+  <div class="chatbot">
+    <header>
+      <h2>Stella</h2>
+      <span class="close-btn material-symbols-outlined">close</span>
+    </header>
+    <ul class="chatbox">
+      <li class="chat incoming">
+        <span class="material-symbols-outlined">smart_toy</span>
+        <p>Hi, I'm Stella , your personal travel assistant!</p>
+        
+      </li>
+      <li class="chat incoming">
+        <span class="material-symbols-outlined">smart_toy</span>
+        <p>How can I help you today?</p>
+        
+      </li>
+    </ul>
+    <div class="chat-input">
+      <textarea placeholder="Enter a message..." spellcheck="false" required></textarea>
+      <span id="send-btn" class="material-symbols-rounded">send</span>
+    </div>
+  </div> -->
+
+
+  <!-- 
+        - #CTA
+      -->
+
+      <section class="cta" id="contact">
+        <div class="container">
+
+          <div class="cta-content">
+            <p class="section-subtitle">Call To Action</p>
+
+            <h2 class="h2 section-title">Ready For Unforgatable Travel. Remember Us!</h2>
+
+            <p class="section-text">
+              </p>
+          </div>
+
+          <button class="btn btn-secondary">Contact Us !</button>
+
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+   <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer">
+
+    <div class="footer-top">
+      <div class="container">
+
+        <div class="footer-brand">
+
+          <a href="#" class="logo">
+            <img src="../static/images/logo.svg" alt="Tourly logo">
+          </a>
+
+          <p class="footer-text">
+            
+          </p>
+
+        </div>
+
+        <div class="footer-contact">
+
+          <h4 class="contact-title">Contact Us</h4>
+
+          <p class="contact-text">
+            Feel free to contact and reach us !!
+          </p>
+
+          <ul>
+
+            <li class="contact-item">
+              <ion-icon name="call-outline"></ion-icon>
+
+              <a href="tel:+919875643901" class="contact-link">+91 9875643901</a>
+            </li>
+
+            <li class="contact-item">
+              <ion-icon name="mail-outline"></ion-icon>
+
+              <a href="mailto:info.tourly.com" class="contact-link">info.tourly.com</a>
+            </li>
+
+            <li class="contact-item">
+              <ion-icon name="location-outline"></ion-icon>
+
+              <address>560064 Bangalore, Karnataka</address>
+            </li>
+
+          </ul>
+
+        </div>
+
+        <div class="footer-form">
+
+          <p class="form-text">
+            Subscribe our newsletter for more update & news !!
+          </p>
+
+          <form action="" class="form-wrapper">
+            <input type="email" name="email" class="input-field" placeholder="Enter Your Email" required>
+
+            <button type="submit" class="btn btn-secondary">Subscribe</button>
+          </form>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+
+        <p class="copyright">
+          &copy; 2022 <a href="">codewithus</a>. All rights reserved
+        </p>
+
+        <ul class="footer-bottom-list">
+
+          <li>
+            <a href="#" class="footer-bottom-link">Privacy Policy</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-bottom-link">Term & Condition</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-bottom-link">FAQ</a>
+          </li>
+
+        </ul>
+
+      </div>
+    </div>
+
+  </footer>
+
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+
+
+<!-- Show the success modal if the success message is present -->
+
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const packageSelect = document.getElementById("package");
+      const priceInput = document.getElementById("price");
+      const guestsInput = document.getElementById("guests");
+  
+      packageSelect.addEventListener("change", function() {
+        const selectedPackage = packageSelect.value;
+        let price;
+  
+        switch (selectedPackage) {
+          case "package1":
+        price = 2500; 
+        break;
+      case "package2":
+        price = 5000; 
+        break;
+      case "package3":
+        price = 7000; 
+        break;
+      case "package4":
+        price = 4000; 
+        break;
+      case "package5":
+        price = 3500; 
+        break;
+      case "package6":
+        price = 8000; 
+        break;
+      case "package7":
+        price = 10000; 
+        break;
+      case "package8":
+        price = 6500; 
+        break;
+      case "package9":
+        price = 7500; 
+        break;
+      case "package10":
+        price = 8000; 
+        break;
+      case "package11":
+        price = 5500; 
+        break;
+
+      default:
+        price = 0;
+    }
+
+        const guests = parseInt(guestsInput.value) || 1; // Default to 1 guest if input is empty
+    const totalPrice = price * guests;
+    priceInput.value = totalPrice;
+  });
+
+  guestsInput.addEventListener("input", function() {
+    const guests = parseInt(this.value) || 1; // Default to 1 guest if input is empty
+    const price = parseInt(packageSelect.value.replace("package", "")) * 100; // Assuming prices are 100, 150, 200
+    const totalPrice = price * guests;
+    priceInput.value = totalPrice;
+  });
+});
+  </script>
+  
+
+
+
+
+
+
+  <!-- booking.html -->
+
+<!-- ... (existing HTML content) ... -->
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<div id="successPopup" class="popup">
+    <div class="popup-content">
+        <span class="close-btn">&times;</span>
+        <p id="successMessage"></p>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function() {
+        var successMessage = "{{ success_message or '' }}"; // Get the success message value from Flask
+
+        if (successMessage) {
+            showSuccessPopup(successMessage);
+        }
+    });
+
+    function showSuccessPopup(message) {
+        var popup = document.getElementById("successPopup");
+        var successMessageElement = document.getElementById("successMessage");
+
+        successMessageElement.textContent = message;
+        popup.style.display = "block";
+
+        var closeBtn = document.getElementsByClassName("close-btn")[0];
+        closeBtn.onclick = function() {
+            popup.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == popup) {
+                popup.style.display = "none";
+            }
+        }
+    }
+</script>
+
+<!-- ... (existing HTML content) ... -->
+</body>
+</html>
+
+
+
+
+  
+</body>
+
+</html>

@@ -1,0 +1,1192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tourly - Travel agancy</title>
+
+  
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+ 
+  <link rel="stylesheet" href="../static/css/style.css">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+
+  <!-- chatbot -->
+
+  <link rel="stylesheet" href="../static/css/style1.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google Fonts Link For Icons -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0" />
+  <!-- <script src="{{ url_for('static', filename='js/script1.js') }}"></script> -->
+
+
+    <style>
+      
+      .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+          /* Ensure it's above other content */
+      }
+    </style>
+</head>
+
+<body id="top">
+
+
+  <header class="header" data-header style="background-color: #16001E; ">
+
+    <div class="overlay" data-overlay></div>
+
+    <div class="header-top">
+      <div class="container">
+
+        <a href="tel:+919875643901" class="helpline-box">
+
+          <div class="icon-box">
+            <ion-icon name="call-outline"></ion-icon>
+          </div>
+
+          <div class="wrapper">
+            <p class="helpline-title">For Further Inquires :</p>
+
+            <p class="helpline-number">+91 9875643901</p>
+          </div>
+
+        </a>
+
+        <a href="#" class="logo">
+          <img src="../static/images/logo-bg.png" alt="Logo">
+
+        </a>
+
+        <div class="header-btn-group">
+
+          <button class="search-btn" aria-label="Search">
+            <ion-icon name="search"></ion-icon>
+          </button>
+
+          <button class="nav-open-btn" aria-label="Open Menu" data-nav-open-btn>
+            <ion-icon name="menu-outline"></ion-icon>
+          </button>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="header-bottom">
+      <div class="container">
+
+        <ul class="social-list">
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-youtube"></ion-icon>
+            </a>
+          </li>
+
+        </ul>
+
+        <nav class="navbar" data-navbar>
+
+          <div class="navbar-top">
+
+            <a href="#" class="logo">
+              <img src="./static/images/logo-blue.svg" alt="Tourly logo">
+            </a>
+
+            <button class="nav-close-btn" aria-label="Close Menu" data-nav-close-btn>
+              <ion-icon name="close-outline"></ion-icon>
+            </button>
+
+          </div>
+
+          <ul class="navbar-list">
+            <li><a href="{{ url_for('index') }}" class="navbar-link" data-nav-link>home</a></li>
+            <!-- <li><a href="#" class="navbar-link" data-nav-link>about us</a></li> -->
+            <li><a href="{{ url_for('render_destination') }}" class="navbar-link" data-nav-link>destination</a></li>
+            <li><a href="{{ url_for('render_package') }}#package" class="navbar-link" data-nav-link>packages</a></li>
+            <li><a href="{{ url_for('render_gallery') }}" class="navbar-link" data-nav-link>gallery</a></li>
+            <li><a href="#contact" class="navbar-link" data-nav-link>contact us</a></li>
+          </ul>
+
+        </nav>
+
+        
+        <a href="{{ booking_url }}" class="btn btn-primary">Book Now</a>
+        
+
+
+      </div>
+    </div>
+
+  </header>
+
+
+  <section class="popular" id="destination" style="background-color:#C5D1EB;">
+    <ul class="container">
+
+      
+
+      <h2 class="h2 section-title" style="padding-top: 90px; color:rgb(10, 10, 10)">Popular destination</h2>
+
+      <b><p class="section-text" style="color:rgb(18, 19, 19); font-family: 'Poppins';">
+        Mysore, a city steeped in rich history and cultural heritage, boasts one of India's most popular destinations: the majestic Mysore Palace. Adorned with intricate architecture and vibrant colors, this grand palace is a testament to the city's royal past and serves as a captivating symbol of its legacy. Visitors are drawn to its opulent halls, ornate ceilings, and sprawling gardens, which offer a glimpse into the lavish lifestyle of the erstwhile Maharajas. Beyond the palace, Mysore enchants travelers with its bustling markets, fragrant flower stalls, and serene Chamundi Hill, home to the ancient Chamundeshwari Temple, providing a perfect blend of spirituality, history, and natural beauty.
+      </p></b>
+
+      <ul class="popular-list">
+
+        <li>
+          <div class="popular-card">
+
+            <figure class="card-img">
+              <img src="../static/images/popular-1.jpg" alt="Mysore Palace" loading="lazy">
+            </figure>
+
+            <div class="card-content">
+
+              <div class="card-rating">
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+              </div>
+
+              <p class="card-subtitle">
+                <a href="#">Karnataka</a>
+              </p>
+
+              <h3 class="h3 card-title">
+                <a href="#">Mysore Palace</a>
+              </h3>
+
+              <p class="card-text">
+                Mysore Palace, also known as the Amba Vilas Palace, is a magnificent royal residence located in Mysore, Karnataka, India. 
+              </p>
+              <!-- Inside the Mysore Palace card -->
+
+              <hr>
+              <button class="btn-see-gallery" data-destination="mysore-palace" style="color: green; align-content: right;">See Gallery</button>
+              <!-- In destination.html -->
+
+<!-- <button class="btn-see-gallery" data-destination="mysore-palace" style="color: green; align-content: right;">See Gallery</button> -->
+
+            </div>
+            
+
+          </div>
+        </li>
+
+        <li>
+          <div class="popular-card">
+
+            <figure class="card-img">
+              <img src="../static/images/popular-2.jpg" alt="Chamundeshwari Temple" loading="lazy">
+            </figure>
+
+            <div class="card-content">
+
+              <div class="card-rating">
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+              </div>
+
+              <p class="card-subtitle">
+                <a href="#">Karnataka</a>
+              </p>
+
+              <h3 class="h3 card-title">
+                <a href="#">Chamundeshwari Temple</a>
+              </h3>
+
+              <p class="card-text">
+                The Chamundeshwari Temple, situated atop the Chamundi Hills in Mysore, is a Hindu shrine dedicated to Goddess Chamundeshwari.
+              </p>
+              <!-- Inside the Chamundeshwari Temple card -->
+              <hr>
+              <button class="btn-see-gallery" data-destination="chamundeshwari-temple" style="color: green; align-content: right;">See Gallery</button>
+
+
+            </div>
+
+          </div>
+        </li>
+
+        <li>
+          <div class="popular-card">
+
+            <figure class="card-img">
+              <img src="../static/images/popular-3.jpg" alt="KRS Dam" loading="lazy">
+            </figure>
+
+            <div class="card-content">
+
+              <div class="card-rating">
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+              </div>
+
+              <p class="card-subtitle">
+                <a href="#">Mysore</a>
+              </p>
+
+              <h3 class="h3 card-title">
+                <a href="#">KRS Dam</a>
+              </h3>
+
+              <p class="card-text">
+                The KRS Dam, officially known as the Krishnarajasagara Dam, is an iconic landmark situated near Mysore in Karnataka, India. 
+              </p>
+              <hr>
+              <button class="btn-see-gallery" data-destination="krs-dam" style="color: green; align-content: right;">See Gallery</button>
+
+            </div>
+
+          </div>
+        </li>
+        <li>
+          <div class="popular-card">
+
+            <figure class="card-img">
+              <img src="../static/images/popular-4.jpg" alt="philomena church, Karnataka" loading="lazy">
+            </figure>
+
+            <div class="card-content">
+
+              <div class="card-rating">
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+              </div>
+
+              <p class="card-subtitle">
+                <a href="#">Karnataka</a>
+              </p>
+
+              <h3 class="h3 card-title">
+                <a href="#">Philomena Church</a>
+              </h3>
+
+              <p class="card-text">
+                The Philomena Church, located in Mysuru, India, is a breathtaking testament to neo-Gothic architecture. 
+              </p>
+              <hr>
+              <button class="btn-see-gallery" data-destination="Philomena-Church" style="color: green; align-content: right;">See Gallery</button>
+
+            </div>
+
+          </div>
+        </li>
+
+
+        <li>
+          <div class="popular-card">
+
+            <figure class="card-img">
+              <img src="../static/images/popular-5.jpg" alt="Lalith Mahal, Karnataka" loading="lazy">
+            </figure>
+
+            <div class="card-content">
+
+              <div class="card-rating">
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+              </div>
+
+              <p class="card-subtitle">
+                <a href="#">Karnataka</a>
+              </p>
+
+              <h3 class="h3 card-title">
+                <a href="#">Lalith Mahal</a>
+              </h3>
+
+              <p class="card-text">
+                The Lalitha Mahal, situated in Mysuru, India, is a striking example of royal opulence and architectural grandeur. 
+              </p>
+              <hr>
+              <button class="btn-see-gallery" data-destination="lalith" style="color: green; align-content: right;">See Gallery</button>
+
+            </div>
+
+          </div>
+        </li>
+
+
+        <li>
+          <div class="popular-card">
+
+            <figure class="card-img">
+              <img src="../static/images/popular-6.jpg" alt="Ranganathittu Bird Sanctuary, Karnataka" loading="lazy">
+            </figure>
+
+            <div class="card-content">
+
+              <div class="card-rating">
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+              </div>
+
+              <p class="card-subtitle">
+                <a href="#">Karnataka</a>
+              </p>
+
+              <h3 class="h3 card-title">
+                <a href="#">Ranganathittu Bird Sanctuary</a>
+              </h3>
+
+              <p class="card-text">
+                The Ranganathittu Bird Sanctuary, nestled in the outskirts of Mysuru, India, is a haven for avian enthusiasts and nature lovers alike.
+              </p>
+              <hr>
+              <button class="btn-see-gallery" data-destination="Ranganathittu-Bird-Sanctuary" style="color: green; align-content: right;">See Gallery</button>
+
+            </div>
+
+          </div>
+        </li>
+
+
+        <li>
+          <div class="popular-card">
+
+            <figure class="card-img">
+              <img src="../static/images/jag-1.jpeg" alt="Jaganmohan palace, Karnataka" loading="lazy">
+            </figure>
+
+            <div class="card-content">
+
+              <div class="card-rating">
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+              </div>
+
+              <p class="card-subtitle">
+                <a href="#">Karnataka</a>
+              </p>
+
+              <h3 class="h3 card-title">
+                <a href="#">Jaganmohan Palace</a>
+              </h3>
+
+              <p class="card-text">
+                The Jaganmohan Palace in Mysuru is an iconic historic monument known for its stunning architecture and housing a remarkable collection of artworks.
+              </p>
+              <hr>
+              <button class="btn-see-gallery" data-destination="Jaganmohan-Palace" style="color: green; align-content: right;">See Gallery</button>
+
+            </div>
+
+          </div>
+        </li>
+
+        <li>
+          <div class="popular-card">
+
+            <figure class="card-img">
+              <img src="../static/images/zoo-1.jpeg" alt="Mysuru Zoo, Karnataka" loading="lazy">
+            </figure>
+
+            <div class="card-content">
+
+              <div class="card-rating">
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+              </div>
+
+              <p class="card-subtitle">
+                <a href="#">Karnataka</a>
+              </p>
+
+              <h3 class="h3 card-title">
+                <a href="#">Mysuru Zoo</a>
+              </h3>
+
+              <p class="card-text">
+                The Mysuru Zoo, officially known as the Sri Chamarajendra Zoological Gardens, is a renowned zoological park showcasing diverse flora and fauna.
+              </p>
+              <hr>
+              <button class="btn-see-gallery" data-destination="Mysuru-zoo" style="color: green; align-content: right;">See Gallery</button>
+
+            </div>
+
+          </div>
+        </li>
+
+
+        <li>
+          <div class="popular-card">
+
+            <figure class="card-img">
+              <img src="../static/images/bri-1.jpg" alt="GRS Fantasy Park, Karnataka" loading="lazy">
+            </figure>
+
+            <div class="card-content">
+
+              <div class="card-rating">
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+              </div>
+
+              <p class="card-subtitle">
+                <a href="#">Karnataka</a>
+              </p>
+
+              <h3 class="h3 card-title">
+                <a href="#">Brindavan Gardens</a>
+              </h3>
+
+              <p class="card-text">
+                The Brindavan Gardens, located near the Krishnarajasagara Dam in Mysuru, Karnataka, are renowned for their stunning beauty and elaborate design.
+              </p>
+              <hr>
+              <button class="btn-see-gallery" data-destination="brindavan" style="color: green; align-content: right;">See Gallery</button>
+
+            </div>
+
+          </div>
+        </li>
+
+
+        <li>
+          <div class="popular-card">
+
+            <figure class="card-img">
+              <img src="../static/images/grs-5.jpg" alt="GRS Fantasy Park, Karnataka" loading="lazy">
+            </figure>
+
+            <div class="card-content">
+
+              <div class="card-rating">
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+              </div>
+
+              <p class="card-subtitle">
+                <a href="#">Karnataka</a>
+              </p>
+
+              <h3 class="h3 card-title">
+                <a href="#">GRS Fantasy Park</a>
+              </h3>
+
+              <p class="card-text">
+                GRS Fantasy Park in Mysuru is a thrilling amusement park offering a wide range of water rides, adventure activities, and entertainment options for visitors of all ages.
+              </p>
+              <hr>
+              <button class="btn-see-gallery" data-destination="grs" style="color: green; align-content: right;">See Gallery</button>
+
+            </div>
+
+          </div>
+        </li>
+
+        <li>
+          <div class="popular-card">
+
+            <figure class="card-img">
+              <img src="../static/images/wa-5.jpg" alt="Melody World Wax Museum, Karnataka" loading="lazy">
+            </figure>
+
+            <div class="card-content">
+
+              <div class="card-rating">
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+              </div>
+
+              <p class="card-subtitle">
+                <a href="#">Karnataka</a>
+              </p>
+
+              <h3 class="h3 card-title">
+                <a href="#">Melody World Wax Museum</a>
+              </h3>
+
+              <p class="card-text">
+                Melody World Wax Museum in Mysuru is an enchanting attraction featuring lifelike wax sculptures depicting iconic musicians and musical legends from around the world.
+              </p>
+              <hr>
+              <button class="btn-see-gallery" data-destination="melody" style="color: green; align-content: right;">See Gallery</button>
+
+            </div>
+
+          </div>
+        </li>
+
+        <li>
+          <div class="popular-card">
+
+            <figure class="card-img">
+              <img src="../static/images/kar-5.jpg" alt="Karanji Lake, Karnataka" loading="lazy">
+            </figure>
+
+            <div class="card-content">
+
+              <div class="card-rating">
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+              </div>
+
+              <p class="card-subtitle">
+                <a href="#">Karnataka</a>
+              </p>
+
+              <h3 class="h3 card-title">
+                <a href="#">Karanji Lake</a>
+              </h3>
+
+              <p class="card-text">
+                Karanji Lake in Mysuru is a picturesque bird sanctuary and nature reserve, offering serene boat rides and birdwatching opportunities amidst lush greenery.
+              </p>
+              <hr>
+              <button class="btn-see-gallery" data-destination="karanji" style="color: green; align-content: right;">See Gallery</button>
+
+            </div>
+
+          </div>
+        </li>
+
+        <li>
+          <div class="popular-card">
+
+            <figure class="card-img">
+              <img src="../static/images/bara-1.jpeg" alt="Barachukki and Gaganachukki falls, Karnataka" loading="lazy">
+            </figure>
+
+            <div class="card-content">
+
+              <div class="card-rating">
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+              </div>
+
+              <p class="card-subtitle">
+                <a href="#">Karnataka</a>
+              </p>
+
+              <h3 class="h3 card-title">
+                <a href="#">Barachukki and Gaganachukki falls</a>
+              </h3>
+
+              <p class="card-text">
+                Barachukki and Gaganachukki Falls near Mysuru are breathtaking twin waterfalls cascading amidst verdant surroundings, offering a mesmerizing natural spectacle.
+              </p>
+              <hr>
+              <button class="btn-see-gallery" data-destination="gaganachukki" style="color: green; align-content: right;">See Gallery</button>
+
+            </div>
+
+          </div>
+        </li>
+
+
+        <li>
+          <div class="popular-card">
+
+            <figure class="card-img">
+              <img src="../static/images/folk-1.jpg" alt="GRS Fantasy Park, Karnataka" loading="lazy">
+            </figure>
+
+            <div class="card-content">
+
+              <div class="card-rating">
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+              </div>
+
+              <p class="card-subtitle">
+                <a href="#">Karnataka</a>
+              </p>
+
+              <h3 class="h3 card-title">
+                <a href="#">Folklore Museum</a>
+              </h3>
+
+              <p class="card-text">
+                The Folklore Museum, located within the University of Mysore campus in Mysuru, Karnataka, is dedicated to preserving and showcasing the rich cultural heritage of Karnataka.
+              </p>
+              <hr>
+              <button class="btn-see-gallery" data-destination="folklore" style="color: green; align-content: right;">See Gallery</button>
+
+            </div>
+
+          </div>
+        </li>
+
+
+        <li>
+          <div class="popular-card">
+
+            <figure class="card-img">
+              <img src="../static/images/ra-1.jpg" alt="GRS Fantasy Park, Karnataka" loading="lazy">
+            </figure>
+
+            <div class="card-content">
+
+              <div class="card-rating">
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+              </div>
+
+              <p class="card-subtitle">
+                <a href="#">Karnataka</a>
+              </p>
+
+              <h3 class="h3 card-title">
+                <a href="#">Sri Ranganathaswamy Temple</a>
+              </h3>
+
+              <p class="card-text">
+                The Sri Ranganathaswamy Temple, located in Srirangapatna near Mysuru, Karnataka, is a significant Hindu temple dedicated to Lord Ranganatha, an avatar of Vishnu. 
+              </p>
+              <hr>
+              <button class="btn-see-gallery" data-destination="ranganathaswamy" style="color: green; align-content: right;">See Gallery</button>
+
+            </div>
+
+          </div>
+        </li>
+
+
+
+
+      </ul>
+
+      <h2 class="h2 section-title" style="padding-top: 90px; color:rgb(10, 10, 10)">Unpopular destination</h2>
+
+      <ul class="popular-list">
+      <li>
+        <div class="popular-card">
+
+          <figure class="card-img">
+            <img src="../static/images/tal-1.jpg" alt="GRS Fantasy Park, Karnataka" loading="lazy">
+          </figure>
+
+          <div class="card-content">
+
+            <div class="card-rating">
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+            </div>
+
+            <p class="card-subtitle">
+              <a href="#">Karnataka</a>
+            </p>
+
+            <h3 class="h3 card-title">
+              <a href="#">Talakadu</a>
+            </h3>
+
+            <p class="card-text">
+              Talakadu is a historically significant town located on the banks of the Kaveri River in Karnataka. Known for its unique landscape of sand dunes, the town is famous for its buried temples and rich mythological heritage.
+            </p>
+            <hr>
+            <button class="btn-see-gallery" data-destination="talakadu" style="color: green; align-content: right;">See Gallery</button>
+
+          </div>
+
+        </div>
+      </li>
+
+      <li>
+        <div class="popular-card">
+
+          <figure class="card-img">
+            <img src="../static/images/shiv-1.jpg" alt="GRS Fantasy Park, Karnataka" loading="lazy">
+          </figure>
+
+          <div class="card-content">
+
+            <div class="card-rating">
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+            </div>
+
+            <p class="card-subtitle">
+              <a href="#">Karnataka</a>
+            </p>
+
+            <h3 class="h3 card-title">
+              <a href="#">Shivanasamudra Falls</a>
+            </h3>
+
+            <p class="card-text">
+              Shivanasamudra Falls, located on the Kaveri River in Karnataka, is a stunning natural wonder comprising two major cascades, Gaganachukki and Bharachukki.
+            </p>
+            <hr>
+            <button class="btn-see-gallery" data-destination="shiv" style="color: green; align-content: right;">See Gallery</button>
+
+          </div>
+
+        </div>
+      </li>
+
+      <li>
+        <div class="popular-card">
+
+          <figure class="card-img">
+            <img src="../static/images/silk-1.jpg" alt="GRS Fantasy Park, Karnataka" loading="lazy">
+          </figure>
+
+          <div class="card-content">
+
+            <div class="card-rating">
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+            </div>
+
+            <p class="card-subtitle">
+              <a href="#">Karnataka</a>
+            </p>
+
+            <h3 class="h3 card-title">
+              <a href="#">Mysore Silk Factory</a>
+            </h3>
+
+            <p class="card-text">
+              The Mysore Silk Factory, established in 1912 in Mysuru, Karnataka, is renowned for producing the finest quality silk in India. 
+            </p>
+            <hr>
+            <button class="btn-see-gallery" data-destination="silk" style="color: green; align-content: right;">See Gallery</button>
+
+          </div>
+
+        </div>
+      </li>
+
+
+      <li>
+        <div class="popular-card">
+
+          <figure class="card-img">
+            <img src="../static/images/mel-4.jpg" alt="GRS Fantasy Park, Karnataka" loading="lazy">
+          </figure>
+
+          <div class="card-content">
+
+            <div class="card-rating">
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+            </div>
+
+            <p class="card-subtitle">
+              <a href="#">Karnataka</a>
+            </p>
+
+            <h3 class="h3 card-title">
+              <a href="#">Melukote</a>
+            </h3>
+
+            <p class="card-text">
+              Melukote, also known as Melkote, is a historic and religious town in Karnataka, India. Situated in the Mandya district, it is renowned for its ancient temples and scholarly significance. 
+            </p>
+            <hr>
+            <button class="btn-see-gallery" data-destination="melukote" style="color: green; align-content: right;">See Gallery</button>
+
+          </div>
+
+        </div>
+      </li>
+
+      <li>
+        <div class="popular-card">
+
+          <figure class="card-img">
+            <img src="../static/images/br-1.jpg" alt="GRS Fantasy Park, Karnataka" loading="lazy">
+          </figure>
+
+          <div class="card-content">
+
+            <div class="card-rating">
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+            </div>
+
+            <p class="card-subtitle">
+              <a href="#">Karnataka</a>
+            </p>
+
+            <h3 class="h3 card-title">
+              <a href="#">Biligiri Rangaswamy Temple (B.R. Hills)</a>
+            </h3>
+
+            <p class="card-text">
+              Biligiri Rangaswamy Temple (B.R. Hills), located in the Chamarajanagar district of Karnataka, India, is a revered Hindu pilgrimage site dedicated to Lord Ranganatha, a form of Vishnu.
+            </p>
+            <hr>
+            <button class="btn-see-gallery" data-destination="br" style="color: green; align-content: right;">See Gallery</button>
+
+          </div>
+
+        </div>
+      </li>
+
+
+
+      
+    </ul>
+
+
+<h2 class="h2 section-title" style="padding-top: 90px; color:rgb(10, 10, 10)">Others</h2>
+
+<ul class="popular-list">
+      <li>
+        <div class="popular-card">
+
+          <figure class="card-img">
+            <img src="../static/images/fest-13.jpeg" alt="GRS Fantasy Park, Karnataka" loading="lazy">
+          </figure>
+
+          <div class="card-content">
+
+            <div class="card-rating">
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+            </div>
+
+            <p class="card-subtitle">
+              <a href="#">Karnataka</a>
+            </p>
+
+            <h3 class="h3 card-title">
+              <a href="#">Festivals</a>
+            </h3>
+
+            <p class="card-text">
+              Mysuru, a city rich in culture and tradition, celebrates a variety of festivals with great enthusiasm and grandeur.
+            </p>
+            <hr>
+            <button class="btn-see-gallery" data-destination="festivals" style="color: green; align-content: right;">See Gallery</button>
+
+          </div>
+
+        </div>
+      </li>
+
+      <li>
+        <div class="popular-card">
+
+          <figure class="card-img">
+            <img src="../static/images/food-8.jpg" alt="GRS Fantasy Park, Karnataka" loading="lazy">
+          </figure>
+
+          <div class="card-content">
+
+            <div class="card-rating">
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+            </div>
+
+            <p class="card-subtitle">
+              <a href="#">Karnataka</a>
+            </p>
+
+            <h3 class="h3 card-title">
+              <a href="#">Foods</a>
+            </h3>
+
+            <p class="card-text">
+              Mysore, a city in Karnataka, India, boasts a rich culinary heritage, blending traditional South Indian flavors with unique local specialties. 
+            </p>
+            <hr>
+            <button class="btn-see-gallery" data-destination="food" style="color: green; align-content: right;">See Gallery</button>
+
+          </div>
+
+        </div>
+      </li>
+
+
+      </ul>
+
+
+      <!-- <a href="destination.html" class="btn btn-primary">More destination</a> -->
+
+
+    </div>
+  </section>
+  <!-- <script src="./src/assets/js/script.js"></> -->
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <!-- chatbot -->
+
+  <button class="chatbot-toggler">
+    <span class="material-symbols-rounded">mode_comment</span>
+    <span class="material-symbols-outlined">close</span>
+  </button>
+  <div class="chatbot">
+    <header>
+      <h2>Stella</h2>
+      <span class="close-btn material-symbols-outlined">close</span>
+    </header>
+    <ul class="chatbox">
+      <li class="chat incoming">
+        <span class="material-symbols-outlined">smart_toy</span>
+        <p>Hi, I'm Stella , your personal travel assistant!</p>
+        
+      </li>
+      <li class="chat incoming">
+        <span class="material-symbols-outlined">smart_toy</span>
+        <p>How can I help you today?</p>
+        
+      </li>
+    </ul>
+    <div class="chat-input">
+      <textarea placeholder="Enter a message..." spellcheck="false" required></textarea>
+      <span id="send-btn" class="material-symbols-rounded">send</span>
+    </div>
+  </div>
+
+  <!-- 
+        - #CTA
+      -->
+
+      <section class="cta" id="contact">
+        <div class="container">
+
+          <div class="cta-content">
+            <p class="section-subtitle">Call To Action</p>
+
+            <h2 class="h2 section-title">Ready For Unforgatable Travel. Remember Us!</h2>
+
+            <p class="section-text">
+              </p>
+          </div>
+
+          <button class="btn btn-secondary">Contact Us !</button>
+
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+   <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer">
+
+    <div class="footer-top">
+      <div class="container">
+
+        <div class="footer-brand">
+
+          <a href="#" class="logo">
+            <img src="../static/images/logo-bg.png" alt="Logo">
+
+          </a>
+
+          <p class="footer-text">
+            
+          </p>
+
+        </div>
+
+        <div class="footer-contact">
+
+          <h4 class="contact-title">Contact Us</h4>
+
+          <p class="contact-text">
+            Feel free to contact and reach us !!
+          </p>
+
+          <ul>
+
+            <li class="contact-item">
+              <ion-icon name="call-outline"></ion-icon>
+
+              <a href="tel:+919875643901" class="contact-link">+91 9875643901</a>
+            </li>
+
+            <li class="contact-item">
+              <ion-icon name="mail-outline"></ion-icon>
+
+              <a href="mailto:info.tourly.com" class="contact-link">info.tourly.com</a>
+            </li>
+
+            <li class="contact-item">
+              <ion-icon name="location-outline"></ion-icon>
+
+              <address>560064 Bangalore, Karnataka</address>
+            </li>
+
+          </ul>
+
+        </div>
+
+        <div class="footer-form">
+
+          <p class="form-text">
+            Subscribe our newsletter for more update & news !!
+          </p>
+
+          <form action="" class="form-wrapper">
+            <input type="email" name="email" class="input-field" placeholder="Enter Your Email" required>
+
+            <button type="submit" class="btn btn-secondary">Subscribe</button>
+          </form>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+
+        <p class="copyright">
+          &copy; 2022 <a href="">codewithus</a>. All rights reserved
+        </p>
+
+        <ul class="footer-bottom-list">
+
+          <li>
+            <a href="#" class="footer-bottom-link">Privacy Policy</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-bottom-link">Term & Condition</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-bottom-link">FAQ</a>
+          </li>
+
+        </ul>
+
+      </div>
+    </div>
+
+  </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+    // Get all the buttons with class 'btn-see-gallery'
+    const seeGalleryButtons = document.querySelectorAll('.btn-see-gallery');
+
+    // Add click event listener to each button
+    seeGalleryButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Get the destination ID from the button's data-destination attribute
+            const destinationId = this.getAttribute('data-destination');
+
+            // Generate the URL for the gallery.html page using Flask's url_for function
+            const galleryUrl = "{{ url_for('render_gallery', _external=True) }}";
+
+            // Redirect the user to the respective gallery page with the hash
+            window.location.href = `${galleryUrl}#${destinationId}`;
+        });
+    });
+});
+</script>
+
+<!-- Near the end of the <body> -->
+  <!-- <script>
+    const responsesData = {{ responses | tojson }};
+  </script> -->
+
+
+<!-- <script>
+    const responsesData = {{ responses | tojson | safe }};
+</script> -->
+
+
+  <script src="../static/js/script1.js"></script>
+
+
+  </body>
+</html>

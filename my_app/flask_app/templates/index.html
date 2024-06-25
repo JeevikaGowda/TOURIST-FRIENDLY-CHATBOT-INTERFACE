@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tourly - Travel agancy</title>
+
+  
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+ 
+  <link rel="stylesheet" href="./static/css/style.css">
+
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+
+    <!-- chatbot -->
+
+    <link rel="stylesheet" href="./static/css/style1.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Fonts Link For Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0" />
+    <script src="./static/js/script1.js" defer></script>
+
+    
+
+   
+</head>
+
+<body id="top">
+
+  
+
+  <header class="header" data-header>
+
+    <div class="overlay" data-overlay></div>
+
+    <div class="header-top">
+      <div class="container">
+
+        <a href="tel:+919875643901" class="helpline-box">
+
+          <div class="icon-box">
+            <ion-icon name="call-outline"></ion-icon>
+          </div>
+
+          <div class="wrapper">
+            <p class="helpline-title">For Further Inquires :</p>
+
+            <p class="helpline-number">+91 9875643901</p>
+          </div>
+
+        </a>
+
+        <a href="#" class="logo">
+          <img src="./static/images/logo-bg.png" alt="Tourly logo">
+        </a>
+
+        <div class="header-btn-group">
+
+          <button class="search-btn" aria-label="Search">
+            <ion-icon name="search"></ion-icon>
+          </button>
+
+          <button class="nav-open-btn" aria-label="Open Menu" data-nav-open-btn>
+            <ion-icon name="menu-outline"></ion-icon>
+          </button>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="header-bottom">
+      <div class="container">
+
+        <ul class="social-list">
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-youtube"></ion-icon>
+            </a>
+          </li>
+
+        </ul>
+
+        <nav class="navbar" data-navbar>
+
+          <div class="navbar-top">
+
+            <a href="#" class="logo">
+              <img src="./static/images/logo-blue.svg" alt="Tourly logo">
+            </a>
+
+            <button class="nav-close-btn" aria-label="Close Menu" data-nav-close-btn>
+              <ion-icon name="close-outline"></ion-icon>
+            </button>
+
+          </div>
+
+          <ul class="navbar-list">
+
+            <li><a href="{{ url_for('index') }}" class="navbar-link" data-nav-link>home</a></li>
+            <!-- <li><a href="#" class="navbar-link" data-nav-link>about us</a></li> -->
+            <li><a href="#destination" class="navbar-link" data-nav-link>destination</a></li>
+            <li><a href="#package" class="navbar-link" data-nav-link>packages</a></li>
+            <li><a href="#gallery" class="navbar-link" data-nav-link>gallery</a></li>
+            <li><a href="#contact" class="navbar-link" data-nav-link>contact us</a></li>
+            
+
+          </ul>
+
+        </nav>
+
+        <a href="{{ url_for('handle_booking') }}" class="btn btn-secondary">Book Now</a>
+
+      </div>
+    </div>
+
+  </header>
+
+
+
+
+
+  <main>
+    <article>
+
+      <!-- 
+        - #HERO
+      -->
+
+      <section class="hero" id="home" style="background-image: url('./static/images/popular-5.jpg');">
+        <div class="container">
+
+          <h2 class="h1 hero-title">Journey to Mysuru</h2>
+
+          <p class="hero-text">
+            Mysuru, a city in Karnataka, India, boasts a rich historical and cultural heritage. It was once the capital of the Kingdom of Mysuru and is renowned for its majestic Mysuru Palace, a stunning example of Indo-Saracenic architecture. The city is famous for its vibrant Dasara festival, celebrated with grandeur and featuring a spectacular procession. Mysuru is also home to significant landmarks like the Chamundeshwari Temple and Brindavan Gardens. Known for its silk sarees and sandalwood products, Mysuru offers a blend of traditional cuisine, educational institutions like the University of Mysuru, and a welcoming atmosphere for tourists and locals alike.
+          </p>
+
+          <div class="btn-group">
+            <a href="destination.html" class="btn btn-primary">Learn more</a>
+
+            <a href="package.html" class="btn btn-secondary">Check packages</a>
+          </div>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #TOUR SEARCH
+      -->
+
+      <!-- <section class="tour-search">
+        <div class="container">
+
+          <form action="" class="tour-search-form">
+
+            <div class="input-wrapper">
+              <label for="destination" class="input-label">Search Destination*</label>
+
+              <input type="text" name="destination" id="destination" required placeholder="Enter Destination"
+                class="input-field">
+            </div>
+
+            <div class="input-wrapper">
+              <label for="people" class="input-label">Pax Number*</label>
+
+              <input type="number" name="people" id="people" required placeholder="No.of People" class="input-field">
+            </div>
+
+            <div class="input-wrapper">
+              <label for="checkin" class="input-label">Checkin Date**</label>
+
+              <input type="date" name="checkin" id="checkin" required class="input-field">
+            </div>
+
+            <div class="input-wrapper">
+              <label for="checkout" class="input-label">Checkout Date*</label>
+
+              <input type="date" name="checkout" id="checkout" required class="input-field">
+            </div>
+
+            <button type="submit" class="btn btn-secondary">Inquire now</button>
+
+          </form>
+
+        </div>
+      </section>
+ -->
+
+
+
+
+      <!-- 
+        - #POPULAR
+      -->
+
+      <section class="popular" id="destination">
+        <div class="container">
+
+          <!-- <p class="section-subtitle">Uncover place</p> -->
+
+          <h2 class="h2 section-title">Popular destination</h2>
+
+          <p class="section-text">
+            Mysuru, a city steeped in rich history and cultural heritage, boasts one of India's most popular destinations: the majestic Mysuru Palace. Adorned with intricate architecture and vibrant colors, this grand palace is a testament to the city's royal past and serves as a captivating symbol of its legacy. Visitors are drawn to its opulent halls, ornate ceilings, and sprawling gardens, which offer a glimpse into the lavish lifestyle of the erstwhile Maharajas. Beyond the palace, Mysuru enchants travelers with its bustling markets, fragrant flower stalls, and serene Chamundi Hill, home to the ancient Chamundeshwari Temple, providing a perfect blend of spirituality, history, and natural beauty.
+          </p>
+
+          <ul class="popular-list">
+
+            <li>
+              <div class="popular-card">
+
+                <figure class="card-img">
+                  <img src="./static/images/popular-1.jpg" alt="Mysuru Palace, Karnataka" loading="lazy">
+                </figure>
+
+                <div class="card-content">
+
+                  <div class="card-rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                  </div>
+
+                  <p class="card-subtitle">
+                    <a href="#">Karnataka</a>
+                  </p>
+
+                  <h3 class="h3 card-title">
+                    <a href="#">Mysuru Palace</a>
+                  </h3>
+
+                  <p class="card-text">
+                    Mysuru Palace, also known as the Amba Vilas Palace, is a magnificent royal residence located in Mysuru, Karnataka, India. 
+                  </p>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="popular-card">
+
+                <figure class="card-img">
+                  <img src="./static/images/popular-2.jpg" alt="Chamundeshwari Temple, Karnataka" loading="lazy">
+                </figure>
+
+                <div class="card-content">
+
+                  <div class="card-rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                  </div>
+
+                  <p class="card-subtitle">
+                    <a href="#">Karnataka</a>
+                  </p>
+
+                  <h3 class="h3 card-title">
+                    <a href="#">Chamundeshwari Temple</a>
+                  </h3>
+
+                  <p class="card-text">
+                    The Chamundeshwari Temple, situated atop the Chamundi Hills in Mysuru, is a Hindu shrine dedicated to Goddess Chamundeshwari.
+                  </p>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="popular-card">
+
+                <figure class="card-img">
+                  <img src="./static/images/popular-3.jpg" alt="KRS Dam, Mysuru" loading="lazy">
+                </figure>
+
+                <div class="card-content">
+
+                  <div class="card-rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                  </div>
+
+                  <p class="card-subtitle">
+                    <a href="#">Mysuru</a>
+                  </p>
+
+                  <h3 class="h3 card-title">
+                    <a href="#">KRS Dam</a>
+                  </h3>
+
+                  <p class="card-text">
+                    The KRS Dam, officially known as the Krishnarajasagara Dam, is an iconic landmark situated near Mysuru in Karnataka, India. 
+                  </p>
+
+                </div>
+
+              </div>
+            </li>
+            <li>
+              <div class="popular-card">
+
+                <figure class="card-img">
+                  <img src="./static/images/popular-4.jpg" alt="philomena church, Karnataka" loading="lazy">
+                </figure>
+
+                <div class="card-content">
+
+                  <div class="card-rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                  </div>
+
+                  <p class="card-subtitle">
+                    <a href="#">Karnataka</a>
+                  </p>
+
+                  <h3 class="h3 card-title">
+                    <a href="#">Philomena Church</a>
+                  </h3>
+
+                  <p class="card-text">
+                    The Philomena Church, located in Mysuru, India, is a breathtaking testament to neo-Gothic architecture. 
+                  </p>
+
+                </div>
+
+              </div>
+            </li>
+
+
+            <li>
+              <div class="popular-card">
+
+                <figure class="card-img">
+                  <img src="./static/images/popular-5.jpg" alt="Lalith Mahal, Karnataka" loading="lazy">
+                </figure>
+
+                <div class="card-content">
+
+                  <div class="card-rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                  </div>
+
+                  <p class="card-subtitle">
+                    <a href="#">Karnataka</a>
+                  </p>
+
+                  <h3 class="h3 card-title">
+                    <a href="#">Lalith Mahal</a>
+                  </h3>
+
+                  <p class="card-text">
+                    The Lalitha Mahal, situated in Mysuru, India, is a striking example of royal opulence and architectural grandeur. 
+                  </p>
+
+                </div>
+
+              </div>
+            </li>
+
+
+            <li>
+              <div class="popular-card">
+
+                <figure class="card-img">
+                  <img src="./static/images/popular-6.jpg" alt="Ranganathittu Bird Sanctuary, Karnataka" loading="lazy">
+                </figure>
+
+                <div class="card-content">
+
+                  <div class="card-rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                  </div>
+
+                  <p class="card-subtitle">
+                    <a href="#">Karnataka</a>
+                  </p>
+
+                  <h3 class="h3 card-title">
+                    <a href="#">Ranganathittu Bird Sanctuary</a>
+                  </h3>
+
+                  <p class="card-text">
+                    The Ranganathittu Bird Sanctuary, nestled in the outskirts of Mysuru, India, is a haven for avian enthusiasts and nature lovers alike.
+                  </p>
+
+                </div>
+
+              </div>
+            </li>
+
+
+
+
+          </ul>
+
+          <a href="{{ url_for('render_destination')}}" class="btn btn-primary">More destination</a>
+
+
+        </div>
+      </section>
+
+
+
+
+
+
+      <!-- 
+        - #PACKAGE
+      -->
+      <section class="package" id="package" style="background-color: #C5D1EB;">
+        <div class="container">
+    
+          <!-- <p class="section-subtitle" style="padding-top: 90px; color:rgb(10, 11, 12);">Popular Packeges</p> -->
+    
+          <h2 class="h2 section-title" style="padding-top: 15vh; color:rgb(16, 18, 20);">Checkout Our Packeges</h2>
+    
+          <b><p class="section-text" style="padding: 5vh; color:rgb(16, 18, 20); font-size: large; font-family: 'Poppins'; text-align: center;">
+            Life is a journey of self-discovery, where every adventure opens our eyes to the wonders of the world and fills our hearts with unforgettable memories. Travel often, explore new horizons, and let each journey ignite your soul with inspiration and wonder
+          </p></b>
+    
+          <ul class="package-list">
+    
+            <li>
+              <div class="package-card">
+    
+                <figure class="card-banner">
+                  <img src="./static/images/packege-1.jpg" alt="Experience The Great Holiday On Beach" loading="lazy">
+                </figure>
+    
+                <div class="card-content">
+    
+                  <h3 class="h3 card-title">Experience The Great Holiday in Mysuru</h3>
+    
+                  <p class="card-text">
+                    Explore wide range of options available at attractive discounts with best accommodation of 6 Nights and & days in one of the best hotels in
+                  </p>
+    
+                  <ul class="card-meta-list">
+    
+                    <li class="card-meta-item">
+                      <div class="meta-box">
+                        <ion-icon name="time"></ion-icon>
+    
+                        <p class="text">7D/6N</p>
+                      </div>
+                    </li>
+    
+                    <li class="card-meta-item">
+                      <div class="meta-box">
+                        <ion-icon name="people"></ion-icon>
+    
+                        <p class="text">pax: 10</p>
+                      </div>
+                    </li>
+    
+                    <li class="card-meta-item">
+                      <div class="meta-box">
+                        <ion-icon name="location"></ion-icon>
+    
+                        <p class="text">Mysuru</p>
+                      </div>
+                    </li>
+    
+                  </ul>
+    
+                </div>
+    
+                <div class="card-price">
+    
+                  <div class="wrapper">
+    
+                    <p class="reviews">(25 reviews)</p>
+    
+                    <div class="card-rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                    </div>
+    
+                  </div>
+    
+                  <p class="price">
+                    Rs. 15050
+                    <span>/ per person</span>
+                  </p>
+    
+                  <a href="{{ url_for('handle_booking') }}" class="btn btn-secondary">Book Now</a>
+    
+                </div>
+    
+              </div>
+            </li>
+    
+            <li>
+              <div class="package-card">
+    
+                <figure class="card-banner">
+                  <img src="./static/images/packege-3.jpg" alt="Summer Holiday To The Oxolotan River" loading="lazy">
+                </figure>
+    
+                <div class="card-content">
+    
+                  <h3 class="h3 card-title">1 Day Mysuru Tour</h3>
+    
+                  <p class="card-text">
+                    Pickup and Drop from Mysuru Railway Station/ Bus Stand to Hotels/ Restaurant and Vice Versa
+                  </p>
+    
+                  <ul class="card-meta-list">
+    
+                    <li class="card-meta-item">
+                      <div class="meta-box">
+                        <ion-icon name="time"></ion-icon>
+    
+                        <p class="text">1D</p>
+                      </div>
+                    </li>
+    
+                    <li class="card-meta-item">
+                      <div class="meta-box">
+                        <ion-icon name="people"></ion-icon>
+    
+                        <p class="text">pax: 3</p>
+                      </div>
+                    </li>
+    
+                    <li class="card-meta-item">
+                      <div class="meta-box">
+                        <ion-icon name="location"></ion-icon>
+    
+                        <p class="text">Mysuru</p>
+                      </div>
+                    </li>
+    
+                  </ul>
+    
+                </div>
+    
+                <div class="card-price">
+    
+                  <div class="wrapper">
+    
+                    <p class="reviews">(20 reviews)</p>
+    
+                    <div class="card-rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                    </div>
+    
+                  </div>
+    
+                  <p class="price">
+                    Rs. 520
+                    <span>/ per person</span>
+                  </p>
+    
+                  <a href="{{ url_for('handle_booking') }}" class="btn btn-secondary">Book Now</a>
+    
+                </div>
+    
+              </div>
+            </li>
+            
+    
+          <a href="{{ url_for('render_package') }}#package" class="btn btn-primary">View All Packages</a>
+        
+    
+        </div>
+    
+      </section>
+
+
+      <!-- 
+        - #GALLERY
+      -->
+      <section class="gallery" id="gallery" style="background-color: #C5D1EB;">
+        <div class="container">
+    
+          <!-- <p class="section-subtitle">Photo Gallery</p> -->
+    
+          <h2 class="h2 section-title" style="padding-top: 10vh; color:rgb(16, 18, 20);">Photo's From Travellers</h2>
+    
+          <b><p class="section-text" style="padding-top: 3vh; color:rgb(16, 18, 20); font-size: large; font-family: 'Poppins'; text-align: center;">
+            Journeys are not just about the destinations; they are about the memories we create along the way. Each photograph in this gallery is a chapter in the story of adventure, discovery, and joy shared by fellow travelers like you. Let these images inspire your next unforgettable journey.
+          </p></b>
+    
+          <ul class="gallery-list1" style="padding-bottom: 7vh;">
+    
+            <li class="gallery-item1">
+              <figure class="gallery-image1">
+                <img src="./static/images/gallery-1.jpg" alt="Gallery image">
+              </figure>
+            </li>
+    
+            <li class="gallery-item1">
+              <figure class="gallery-image1">
+                <img src="./static/images/gallery-2.jpg" alt="Gallery image">
+              </figure>
+            </li>
+    
+            <li class="gallery-item1">
+              <figure class="gallery-image1">
+                <img src="./static/images/gallery-7.jpg" alt="Gallery image">
+              </figure>
+            </li>
+            <li class="gallery-item1">
+              <figure class="gallery-image1">
+                <img src="./static/images/gallery-10.jpg" alt="Gallery image">
+              </figure>
+            </li>
+            <li class="gallery-item1">
+              <figure class="gallery-image1">
+                <img src="./static/images/gallery-14.jpg" alt="Gallery image">
+              </figure>
+            </li>
+            <li class="gallery-item1">
+              <figure class="gallery-image1">
+                <img src="./static/images/gallery-19.jpg" alt="Gallery image">
+              </figure>
+              </li>
+          </ul>
+
+          <a href="{{ url_for('render_gallery') }}" class="btn btn-primary">View All Photos</a>
+          
+
+        </div>
+      </section>
+
+      <!-- 
+        - #CTA
+      -->
+
+      <section class="cta" id="contact">
+        <div class="container">
+
+          <div class="cta-content">
+            <p class="section-subtitle">Call To Action</p>
+
+            <h2 class="h2 section-title">Ready For Unforgatable Travel. Remember Us!</h2>
+
+            <p class="section-text">
+              </p>
+          </div>
+
+          <button class="btn btn-secondary">Contact Us !</button>
+
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+  <!-- Chatbot -->
+  <button class="chatbot-toggler">
+    <span class="material-symbols-rounded">mode_comment</span>
+    <span class="material-symbols-outlined">close</span>
+  </button>
+  <div class="chatbot">
+    <header>
+      <h2>Stella</h2>
+      <span class="close-btn material-symbols-outlined">close</span>
+    </header>
+    <ul class="chatbox">
+      <li class="chat incoming">
+        <span class="material-symbols-outlined">smart_toy</span>
+        <p>Hi, I'm Stella , your personal travel assistant!</p>
+        
+      </li>
+      <li class="chat incoming">
+        <span class="material-symbols-outlined">smart_toy</span>
+        <p>How can I help you today?</p>
+        
+      </li>
+    </ul>
+    <div class="chat-input">
+      <textarea placeholder="Enter a message..." spellcheck="false" required></textarea>
+      <span id="send-btn" class="material-symbols-rounded">send</span>
+    </div>
+  </div>
+
+
+  <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer">
+
+    <div class="footer-top">
+      <div class="container">
+
+        <div class="footer-brand">
+
+          <a href="#" class="logo">
+            <img src="./static/images/logo-bg.png" alt="Tourly logo">
+          </a>
+
+          <p class="footer-text">
+            
+          </p>
+
+        </div>
+
+        <div class="footer-contact">
+
+          <h4 class="contact-title">Contact Us</h4>
+
+          <p class="contact-text">
+            Feel free to contact and reach us !!
+          </p>
+
+          <ul>
+
+            <li class="contact-item">
+              <ion-icon name="call-outline"></ion-icon>
+
+              <a href="tel:+919875643901" class="contact-link">+91 9875643901</a>
+            </li>
+
+            <li class="contact-item">
+              <ion-icon name="mail-outline"></ion-icon>
+
+              <a href="mailto:info.tourly.com" class="contact-link">info.tourly.com</a>
+            </li>
+
+            <li class="contact-item">
+              <ion-icon name="location-outline"></ion-icon>
+
+              <address>560064 Bangalore, Karnataka</address>
+            </li>
+
+          </ul>
+
+        </div>
+
+        <div class="footer-form">
+
+          <p class="form-text">
+            Subscribe our newsletter for more update & news !!
+          </p>
+
+          <form action="" class="form-wrapper">
+            <input type="email" name="email" class="input-field" placeholder="Enter Your Email" required>
+
+            <button type="submit" class="btn btn-secondary">Subscribe</button>
+          </form>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+
+        <p class="copyright">
+          &copy; 2022 <a href="">codewithus</a>. All rights reserved
+        </p>
+
+        <ul class="footer-bottom-list">
+
+          <li>
+            <a href="#" class="footer-bottom-link">Privacy Policy</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-bottom-link">Term & Condition</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-bottom-link">FAQ</a>
+          </li>
+
+        </ul>
+
+      </div>
+    </div>
+
+  </footer>
+
+
+
+
+
+  <!-- 
+    - #GO TO TOP
+  -->
+
+  <a href="#top" class="go-top" data-go-top>
+    <ion-icon name="chevron-up-outline"></ion-icon>
+  </a>
+
+
+
+
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/string-similarity/umd/string-similarity.min.js"></script>
+  
+
+ 
+
+</body>
+
+</html>

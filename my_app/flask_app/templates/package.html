@@ -1,0 +1,1213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tourly - Travel agancy</title>
+
+  
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+ 
+  <link rel="stylesheet" href="./static/css/style.css">
+
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+
+  <!-- chatbot -->
+
+  <link rel="stylesheet" href="./static/css/style1.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google Fonts Link For Icons -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0" />
+  <script src="./static/js/script1.js" defer></script>
+
+
+    <style>
+      
+      .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+          /* Ensure it's above other content */
+      }
+    </style>
+</head>
+
+<body id="top">
+
+
+  <header class="header" data-header style="background-color: #16001E; ">
+
+    <div class="overlay" data-overlay></div>
+
+    <div class="header-top">
+      <div class="container">
+
+        <a href="tel:+919875643901" class="helpline-box">
+
+          <div class="icon-box">
+            <ion-icon name="call-outline"></ion-icon>
+          </div>
+
+          <div class="wrapper">
+            <p class="helpline-title">For Further Inquires :</p>
+
+            <p class="helpline-number">+91 9875643901</p>
+          </div>
+
+        </a>
+
+        <a href="#" class="logo">
+          <img src="./static/images/logo-bg.png" alt="Tourly logo">
+        </a>
+
+        <div class="header-btn-group">
+
+          <button class="search-btn" aria-label="Search">
+            <ion-icon name="search"></ion-icon>
+          </button>
+
+          <button class="nav-open-btn" aria-label="Open Menu" data-nav-open-btn>
+            <ion-icon name="menu-outline"></ion-icon>
+          </button>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="header-bottom">
+      <div class="container">
+
+        <ul class="social-list">
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-youtube"></ion-icon>
+            </a>
+          </li>
+
+        </ul>
+
+        <nav class="navbar" data-navbar>
+
+          <div class="navbar-top">
+
+            <a href="#" class="logo">
+              <img src="./static/images/logo-blue.svg" alt="Tourly logo">
+            </a>
+
+            <button class="nav-close-btn" aria-label="Close Menu" data-nav-close-btn>
+              <ion-icon name="close-outline"></ion-icon>
+            </button>
+
+          </div>
+
+          <ul class="navbar-list">
+            <li><a href="{{ url_for('index') }}" class="navbar-link" data-nav-link>home</a></li>
+            <!-- <li><a href="#" class="navbar-link" data-nav-link>about us</a></li> -->
+            <li><a href="{{ url_for('render_destination') }}" class="navbar-link" data-nav-link>destination</a></li>
+            <li><a href="{{ url_for('render_package') }}#package" class="navbar-link" data-nav-link>packages</a></li>
+            <li><a href="{{ url_for('render_gallery') }}" class="navbar-link" data-nav-link>gallery</a></li>
+            <li><a href="#contact" class="navbar-link" data-nav-link>contact us</a></li>
+          </ul>
+        </nav>
+
+        <a href="{{ url_for('handle_booking') }}" class="btn btn-secondary">Book Now</a>
+
+      </div>
+    </div>
+
+  </header>
+
+  <section class="package" id="package" style="background-color: #C5D1EB;">
+    <div class="container">
+
+      <!-- <p class="section-subtitle" style="padding-top: 90px; color:rgb(10, 11, 12);">Popular Packeges</p> -->
+
+      <h2 class="h2 section-title" style="padding-top: 15vh; color:rgb(16, 18, 20);">Checkout Our Packeges</h2>
+
+      <b><p class="section-text" style="padding: 5vh; color:rgb(16, 18, 20); font-size: large; font-family: 'Poppins'; text-align: center;">
+        Life is a journey of self-discovery, where every adventure opens our eyes to the wonders of the world and fills our hearts with unforgettable memories. Travel often, explore new horizons, and let each journey ignite your soul with inspiration and wonder
+      </p></b>
+
+      <ul class="package-list">
+
+        <li>
+          <div class="package-card">
+
+            <figure class="card-banner">
+              <img src="./static/images/bri-1.jpg" alt="Experience The Great Holiday On Beach" loading="lazy">
+            </figure>
+
+            <div class="card-content">
+
+              <h3 class="h3 card-title">Mysuru Day Trip: Unveiling the Royal City </h3>
+
+              <p class="card-text">
+                Explore the majestic Mysore Palace, marvel at the intricate carvings of Jaganmohan Palace, and wander through the fragrant Brindavan Gardens. This whirlwind tour includes breakfast and comfortable transportation for a perfect one-day escape!
+              </p>
+
+              <ul class="card-meta-list">
+
+                <li class="card-meta-item">
+                  <div class="meta-box">
+                    <ion-icon name="time"></ion-icon>
+
+                    <p class="text">1D</p>
+                  </div>
+                </li>
+
+                <li class="card-meta-item">
+                  <div class="meta-box">
+                    <ion-icon name="people"></ion-icon>
+
+                    <p class="text">pax: 10</p>
+                  </div>
+                </li>
+
+                <li class="card-meta-item">
+                  <div class="meta-box">
+                    <ion-icon name="location"></ion-icon>
+
+                    <p class="text">Mysuru</p>
+                  </div>
+                </li>
+
+              </ul>
+
+            </div>
+
+            <div class="card-price">
+
+              <div class="wrapper">
+
+                <p class="reviews">(25 reviews)</p>
+
+                <div class="card-rating">
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                </div>
+
+              </div>
+
+              <p class="price">
+                Rs.2500
+                <span>/ per person</span>
+              </p>
+
+              <a href="{{ url_for('handle_booking') }}" class="btn btn-secondary">Book Now</a>
+
+            </div>
+
+          </div>
+        </li>
+
+        <li>
+          <div class="package-card">
+
+            <figure class="card-banner">
+              <img src="./static/images/band-1.jpeg" alt="Summer Holiday To The Oxolotan River" loading="lazy">
+            </figure>
+
+            <div class="card-content">
+
+              <h3 class="h3 card-title"> Mysuru Adventure: Unveiling the Wild Side</h3>
+
+              <p class="card-text">
+                Calling all thrill-seekers! Embark on a jeep safari in the Bandipur National Park, spot tigers, elephants, and diverse wildlife. Relax amidst nature at a comfortable jungle camp, with meals included.
+              </p>
+
+              <ul class="card-meta-list">
+
+                <li class="card-meta-item">
+                  <div class="meta-box">
+                    <ion-icon name="time"></ion-icon>
+
+                    <p class="text">2D/1N</p>
+                  </div>
+                </li>
+
+                <li class="card-meta-item">
+                  <div class="meta-box">
+                    <ion-icon name="people"></ion-icon>
+
+                    <p class="text">pax: 5</p>
+                  </div>
+                </li>
+
+                <li class="card-meta-item">
+                  <div class="meta-box">
+                    <ion-icon name="location"></ion-icon>
+
+                    <p class="text">Mysuru</p>
+                  </div>
+                </li>
+
+              </ul>
+
+            </div>
+
+            <div class="card-price">
+
+              <div class="wrapper">
+
+                <p class="reviews">(20 reviews)</p>
+
+                <div class="card-rating">
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                </div>
+
+              </div>
+
+              <p class="price">
+                Rs. 5000
+                <span>/ per person</span>
+              </p>
+
+              <a href="{{ url_for('handle_booking') }}" class="btn btn-secondary">Book Now</a>
+
+            </div>
+
+          </div>
+        </li>
+
+        <li>
+          <div class="package-card">
+
+            <figure class="card-banner">
+              <img src="./static/images/folk-1.jpeg" alt="Santorini Island's Weekend Vacation" loading="lazy">
+            </figure>
+
+            <div class="card-content">
+
+              <h3 class="h3 card-title">Heritage Mysore: A Royal Retreat </h3>
+
+              <p class="card-text">
+                Immerse yourself in Mysore's rich history. Visit the magnificent Mysore Palace, explore the impressive Folklore Museum, and witness the grandeur of the illuminated Brindavan Gardens at night. Luxuriate in a heritage hotel with breakfast and dinner included.
+              </p>
+
+              <ul class="card-meta-list">
+
+                <li class="card-meta-item">
+                  <div class="meta-box">
+                    <ion-icon name="time"></ion-icon>
+
+                    <p class="text">3D/2N</p>
+                  </div>
+                </li>
+
+                <li class="card-meta-item">
+                  <div class="meta-box">
+                    <ion-icon name="people"></ion-icon>
+
+                    <p class="text">pax: 4</p>
+                  </div>
+                </li>
+
+                <li class="card-meta-item">
+                  <div class="meta-box">
+                    <ion-icon name="location"></ion-icon>
+
+                    <p class="text">Mysuru</p>
+                  </div>
+                </li>
+
+              </ul>
+
+            </div>
+
+            <div class="card-price">
+
+              <div class="wrapper">
+
+                <p class="reviews">(40 reviews)</p>
+
+                <div class="card-rating">
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                </div>
+
+              </div>
+
+              <p class="price">
+                Rs. 7000
+                <span>/ per person</span>
+              </p>
+
+              <a href="{{ url_for('handle_booking') }}" class="btn btn-secondary">Book Now</a>
+
+            </div>
+
+          </div>
+        </li>
+        <li>
+          <div class="package-card">
+
+            <figure class="card-banner">
+              <img src="./static/images/food-7.jpg" alt="Santorini Island's Weekend Vacation" loading="lazy">
+            </figure>
+
+            <div class="card-content">
+
+              <h3 class="h3 card-title">Mysorean Delights: A Culinary Journey </h3>
+
+              <p class="card-text">
+                Indulge in Mysore's vibrant culinary scene. Take a guided food tour, savor authentic Mysore Masala Dosa and melt-in-your-mouth Mysore Pak. Explore the bustling Devaraja Market and learn the secrets of local spices. Comfortable accommodation with breakfast included.
+              </p>
+
+              <ul class="card-meta-list">
+
+                <li class="card-meta-item">
+                  <div class="meta-box">
+                    <ion-icon name="time"></ion-icon>
+
+                    <p class="text">2D/1N</p>
+                  </div>
+                </li>
+
+                <li class="card-meta-item">
+                  <div class="meta-box">
+                    <ion-icon name="people"></ion-icon>
+
+                    <p class="text">pax: 4</p>
+                  </div>
+                </li>
+
+                <li class="card-meta-item">
+                  <div class="meta-box">
+                    <ion-icon name="location"></ion-icon>
+
+                    <p class="text">Mysuru</p>
+                  </div>
+                </li>
+
+              </ul>
+
+            </div>
+
+            <div class="card-price">
+
+              <div class="wrapper">
+
+                <p class="reviews">(40 reviews)</p>
+
+                <div class="card-rating">
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                </div>
+
+              </div>
+
+              <p class="price">
+                Rs. 4000
+                <span>/ per person</span>
+              </p>
+
+              <a href="{{ url_for('handle_booking') }}" class="btn btn-secondary">Book Now</a>
+
+            </div>
+
+          </div>
+        </li>
+
+
+
+        <li>
+          <div class="package-card">
+
+            <figure class="card-banner">
+              <img src="./static/images/grs-5.jpg" alt="Santorini Island's Weekend Vacation" loading="lazy">
+            </figure>
+
+            <div class="card-content">
+
+              <h3 class="h3 card-title">Mysore for Families: Fun-Filled Exploration </h3>
+
+              <p class="card-text">
+                A Mysore adventure designed for families! Visit the enchanting Mysore Zoo, take a boat ride in Karanji Lake, and enjoy a fun-filled evening at the GRS amusement park. Relax in a family-friendly hotel with breakfast included.
+              </p>
+
+              <ul class="card-meta-list">
+
+                <li class="card-meta-item">
+                  <div class="meta-box">
+                    <ion-icon name="time"></ion-icon>
+
+                    <p class="text">3D/2N</p>
+                  </div>
+                </li>
+
+                <li class="card-meta-item">
+                  <div class="meta-box">
+                    <ion-icon name="people"></ion-icon>
+
+                    <p class="text">pax: 4</p>
+                  </div>
+                </li>
+
+                <li class="card-meta-item">
+                  <div class="meta-box">
+                    <ion-icon name="location"></ion-icon>
+
+                    <p class="text">Mysuru</p>
+                  </div>
+                </li>
+
+              </ul>
+
+            </div>
+
+            <div class="card-price">
+
+              <div class="wrapper">
+
+                <p class="reviews">(40 reviews)</p>
+
+                <div class="card-rating">
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                </div>
+
+              </div>
+
+              <p class="price">
+                Rs. 3500
+                <span>/ per person</span>
+              </p>
+
+              <a href="{{ url_for('handle_booking') }}" class="btn btn-secondary">Book Now</a>
+
+            </div>
+
+          </div>
+        </li>
+
+
+        <li>
+          <div class="package-card">
+
+            <figure class="card-banner">
+              <img src="./static/images/bri-6.jpg" alt="Santorini Island's Weekend Vacation" loading="lazy">
+            </figure>
+
+            <div class="card-content">
+
+              <h3 class="h3 card-title">Mystical Mysore: Unveiling History & Nature </h3>
+
+              <p class="card-text">
+                Balance history and nature. Explore Mysore Palace, delve into the Folkore Museum, and witness the illuminated Brindavan Gardens. Escape to serene Ranganathittu Bird Sanctuary, spot diverse birdlife, and enjoy a coracle ride. Comfortable stays and meals included.
+              </p>
+
+              <ul class="card-meta-list">
+
+                <li class="card-meta-item">
+                  <div class="meta-box">
+                    <ion-icon name="time"></ion-icon>
+
+                    <p class="text">4D/3N</p>
+                  </div>
+                </li>
+
+                <li class="card-meta-item">
+                  <div class="meta-box">
+                    <ion-icon name="people"></ion-icon>
+
+                    <p class="text">pax: 4</p>
+                  </div>
+                </li>
+
+                <li class="card-meta-item">
+                  <div class="meta-box">
+                    <ion-icon name="location"></ion-icon>
+
+                    <p class="text">Mysuru</p>
+                  </div>
+                </li>
+
+              </ul>
+
+            </div>
+
+            <div class="card-price">
+
+              <div class="wrapper">
+
+                <p class="reviews">(40 reviews)</p>
+
+                <div class="card-rating">
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                </div>
+
+              </div>
+
+              <p class="price">
+                Rs. 8000
+                <span>/ per person</span>
+              </p>
+
+              <a href="{{ url_for('handle_booking') }}" class="btn btn-secondary">Book Now</a>
+
+            </div>
+
+          </div>
+        </li>
+
+
+        <li>
+          <div class="package-card">
+
+            <figure class="card-banner">
+              <img src="./static/images/hot-12.jpg" alt="Santorini Island's Weekend Vacation" loading="lazy">
+            </figure>
+
+            <div class="card-content">
+
+              <h3 class="h3 card-title">Ayurvedic Escape: Rejuvenate in Mysore  </h3>
+
+              <p class="card-text">
+                Experience holistic wellness in Mysore. Undergo a personalized Ayurvedic consultation, indulge in rejuvenating spa treatments, and practice yoga amidst serene settings. Comfortable stay with healthy meals included.
+              </p>
+
+              <ul class="card-meta-list">
+
+                <li class="card-meta-item">
+                  <div class="meta-box">
+                    <ion-icon name="time"></ion-icon>
+
+                    <p class="text">5D/4N</p>
+                  </div>
+                </li>
+
+                <li class="card-meta-item">
+                  <div class="meta-box">
+                    <ion-icon name="people"></ion-icon>
+
+                    <p class="text">pax: 4</p>
+                  </div>
+                </li>
+
+                <li class="card-meta-item">
+                  <div class="meta-box">
+                    <ion-icon name="location"></ion-icon>
+
+                    <p class="text">Mysuru</p>
+                  </div>
+                </li>
+
+              </ul>
+
+            </div>
+
+            <div class="card-price">
+
+              <div class="wrapper">
+
+                <p class="reviews">(40 reviews)</p>
+
+                <div class="card-rating">
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                </div>
+
+              </div>
+
+              <p class="price">
+                Rs. 10,000
+                <span>/ per person</span>
+              </p>
+
+              <a href="{{ url_for('handle_booking') }}" class="btn btn-secondary">Book Now</a>
+
+            </div>
+
+          </div>
+        </li>
+<!-- 
+adventure -->
+
+        <li>
+          <div class="package-card">
+
+            <figure class="card-banner">
+              <img src="./static/images/cha-4.jpg" alt="Santorini Island's Weekend Vacation" loading="lazy">
+            </figure>
+
+            <div class="card-content">
+
+              <h3 class="h3 card-title">Mysuru Multisport Challenge  </h3>
+
+              <p class="card-text">
+                Test your limits! Hike the Chamundi Hills, kayak on Karanji Lake, and embark on a cycling tour through Mysore's vibrant streets. Comfortable accommodation with breakfast included.
+              </p>
+
+              <ul class="card-meta-list">
+
+                <li class="card-meta-item">
+                  <div class="meta-box">
+                    <ion-icon name="time"></ion-icon>
+
+                    <p class="text">3D/2N</p>
+                  </div>
+                </li>
+
+                <li class="card-meta-item">
+                  <div class="meta-box">
+                    <ion-icon name="people"></ion-icon>
+
+                    <p class="text">pax: 4-8</p>
+                  </div>
+                </li>
+
+                <li class="card-meta-item">
+                  <div class="meta-box">
+                    <ion-icon name="location"></ion-icon>
+
+                    <p class="text">Mysuru</p>
+                  </div>
+                </li>
+
+              </ul>
+
+            </div>
+
+            <div class="card-price">
+
+              <div class="wrapper">
+
+                <p class="reviews">(40 reviews)</p>
+
+                <div class="card-rating">
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                </div>
+
+              </div>
+
+              <p class="price">
+                Rs. 6500
+                <span>/ per person</span>
+              </p>
+
+              <a href="{{ url_for('handle_booking') }}" class="btn btn-secondary">Book Now</a>
+
+            </div>
+
+          </div>
+        </li>
+
+        <li>
+          <div class="package-card">
+
+            <figure class="card-banner">
+              <img src="./static/images/rang-1.jpg" alt="Santorini Island's Weekend Vacation" loading="lazy">
+            </figure>
+
+            <div class="card-content">
+
+              <h3 class="h3 card-title">Mysore Jungle & Water Adventure </h3>
+
+              <p class="card-text">
+                Get your adrenaline pumping! Explore hidden waterfalls through a jungle trek, go white-water rafting on the Cauvery River, and enjoy a coracle ride in Ranganathittu Bird Sanctuary. Comfortable stays with meals included.
+              </p>
+
+              <ul class="card-meta-list">
+
+                <li class="card-meta-item">
+                  <div class="meta-box">
+                    <ion-icon name="time"></ion-icon>
+
+                    <p class="text">4D/3N</p>
+                  </div>
+                </li>
+
+                <li class="card-meta-item">
+                  <div class="meta-box">
+                    <ion-icon name="people"></ion-icon>
+
+                    <p class="text">pax: 6-10</p>
+                  </div>
+                </li>
+
+                <li class="card-meta-item">
+                  <div class="meta-box">
+                    <ion-icon name="location"></ion-icon>
+
+                    <p class="text">Mysuru</p>
+                  </div>
+                </li>
+
+              </ul>
+
+            </div>
+
+            <div class="card-price">
+
+              <div class="wrapper">
+
+                <p class="reviews">(40 reviews)</p>
+
+                <div class="card-rating">
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                </div>
+
+              </div>
+
+              <p class="price">
+                Rs. 7500
+                <span>/ per person</span>
+              </p>
+
+              <a href="{{ url_for('handle_booking') }}" class="btn btn-secondary">Book Now</a>
+
+            </div>
+
+          </div>
+        </li>
+
+
+        <li>
+          <div class="package-card">
+
+            <figure class="card-banner">
+              <img src="./static/images/kar-2.jpg" alt="Santorini Island's Weekend Vacation" loading="lazy">
+            </figure>
+
+            <div class="card-content">
+
+              <h3 class="h3 card-title">Mysuru Palace & Yoga Retreat </h3>
+
+              <p class="card-text">
+                Balance adventure and serenity. Explore the awe-inspiring Mysore Palace, participate in daily yoga sessions amidst serene gardens, and kayak on tranquil Karanji Lake. Luxurious stay with healthy meals included.
+              </p>
+
+              <ul class="card-meta-list">
+
+                <li class="card-meta-item">
+                  <div class="meta-box">
+                    <ion-icon name="time"></ion-icon>
+
+                    <p class="text">5D/4N</p>
+                  </div>
+                </li>
+
+                <li class="card-meta-item">
+                  <div class="meta-box">
+                    <ion-icon name="people"></ion-icon>
+
+                    <p class="text">pax: 2-4</p>
+                  </div>
+                </li>
+
+                <li class="card-meta-item">
+                  <div class="meta-box">
+                    <ion-icon name="location"></ion-icon>
+
+                    <p class="text">Mysuru</p>
+                  </div>
+                </li>
+
+              </ul>
+
+            </div>
+
+            <div class="card-price">
+
+              <div class="wrapper">
+
+                <p class="reviews">(40 reviews)</p>
+
+                <div class="card-rating">
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                </div>
+
+              </div>
+
+              <p class="price">
+                Rs. 8000
+                <span>/ per person</span>
+              </p>
+
+              <a href="{{ url_for('handle_booking') }}" class="btn btn-secondary">Book Now</a>
+
+            </div>
+
+          </div>
+        </li>
+
+
+        <li>
+          <div class="package-card">
+
+            <figure class="card-banner">
+              <img src="./static/images/cha-1.jpg" alt="Santorini Island's Weekend Vacation" loading="lazy">
+            </figure>
+
+            <div class="card-content">
+
+              <h3 class="h3 card-title">Mysuru Heritage Trail & Night Adventure  </h3>
+
+              <p class="card-text">
+                Uncover hidden gems! Hike Chamundi Hills at sunrise, explore the Jaganmohan Palace by day, and embark on a thrilling night cycling tour through illuminated Mysore. Comfortable accommodation with breakfast included.
+              </p>
+
+              <ul class="card-meta-list">
+
+                <li class="card-meta-item">
+                  <div class="meta-box">
+                    <ion-icon name="time"></ion-icon>
+
+                    <p class="text">2D/1N</p>
+                  </div>
+                </li>
+
+                <li class="card-meta-item">
+                  <div class="meta-box">
+                    <ion-icon name="people"></ion-icon>
+
+                    <p class="text">pax: 4-8</p>
+                  </div>
+                </li>
+
+                <li class="card-meta-item">
+                  <div class="meta-box">
+                    <ion-icon name="location"></ion-icon>
+
+                    <p class="text">Mysuru</p>
+                  </div>
+                </li>
+
+              </ul>
+
+            </div>
+
+            <div class="card-price">
+
+              <div class="wrapper">
+
+                <p class="reviews">(40 reviews)</p>
+
+                <div class="card-rating">
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                </div>
+
+              </div>
+
+              <p class="price">
+                Rs. 5500
+                <span>/ per person</span>
+              </p>
+
+              <a href="{{ url_for('handle_booking') }}" class="btn btn-secondary">Book Now</a>
+
+            </div>
+
+          </div>
+        </li>
+
+
+
+
+        <!-- <li>
+          <div class="package-card">
+
+            <figure class="card-banner">
+              <img src="./static/images/packege-2.jpg" alt="Santorini Island's Weekend Vacation" loading="lazy">
+            </figure>
+
+            <div class="card-content">
+
+              <h3 class="h3 card-title">Heritage Mysore: A Royal Retreat </h3>
+
+              <p class="card-text">
+                Immerse yourself in Mysore's rich history. Visit the magnificent Mysore Palace, explore the impressive Folklore Museum, and witness the grandeur of the illuminated Brindavan Gardens at night. Luxuriate in a heritage hotel with breakfast and dinner included.
+              </p>
+
+              <ul class="card-meta-list">
+
+                <li class="card-meta-item">
+                  <div class="meta-box">
+                    <ion-icon name="time"></ion-icon>
+
+                    <p class="text">3D/2N</p>
+                  </div>
+                </li>
+
+                <li class="card-meta-item">
+                  <div class="meta-box">
+                    <ion-icon name="people"></ion-icon>
+
+                    <p class="text">pax: 4</p>
+                  </div>
+                </li>
+
+                <li class="card-meta-item">
+                  <div class="meta-box">
+                    <ion-icon name="location"></ion-icon>
+
+                    <p class="text">Mysuru</p>
+                  </div>
+                </li>
+
+              </ul>
+
+            </div>
+
+            <div class="card-price">
+
+              <div class="wrapper">
+
+                <p class="reviews">(40 reviews)</p>
+
+                <div class="card-rating">
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                </div>
+
+              </div>
+
+              <p class="price">
+                Rs. 7000
+                <span>/ per person</span>
+              </p>
+
+              <a href="{{ url_for('handle_booking') }}" class="btn btn-secondary">Book Now</a>
+
+            </div>
+
+          </div>
+        </li> -->
+
+
+
+      </ul>
+
+      <!-- <button class="btn btn-primary">View All Packages</button> -->
+    
+
+    </div>
+
+  </section>
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <!-- chatbot -->
+
+  <button class="chatbot-toggler">
+    <span class="material-symbols-rounded">mode_comment</span>
+    <span class="material-symbols-outlined">close</span>
+  </button>
+  <div class="chatbot">
+    <header>
+      <h2>Stella</h2>
+      <span class="close-btn material-symbols-outlined">close</span>
+    </header>
+    <ul class="chatbox">
+      <li class="chat incoming">
+        <span class="material-symbols-outlined">smart_toy</span>
+        <p>Hi, I'm Stella , your personal travel assistant!</p>
+        
+      </li>
+      <li class="chat incoming">
+        <span class="material-symbols-outlined">smart_toy</span>
+        <p>How can I help you today?</p>
+        
+      </li>
+    </ul>
+    <div class="chat-input">
+      <textarea placeholder="Enter a message..." spellcheck="false" required></textarea>
+      <span id="send-btn" class="material-symbols-rounded">send</span>
+    </div>
+  </div>
+
+  <!-- 
+        - #CTA
+      -->
+
+      <section class="cta" id="contact">
+        <div class="container">
+
+          <div class="cta-content">
+            <p class="section-subtitle">Call To Action</p>
+
+            <h2 class="h2 section-title">Ready For Unforgatable Travel. Remember Us!</h2>
+
+            <p class="section-text">
+              </p>
+          </div>
+
+          <button class="btn btn-secondary">Contact Us !</button>
+
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+   <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer">
+
+    <div class="footer-top">
+      <div class="container">
+
+        <div class="footer-brand">
+
+          <a href="#" class="logo">
+            <img src="./static/images/logo-bg.png" alt="Tourly logo">
+          </a>
+
+          <p class="footer-text">
+            
+          </p>
+
+        </div>
+
+        <div class="footer-contact">
+
+          <h4 class="contact-title">Contact Us</h4>
+
+          <p class="contact-text">
+            Feel free to contact and reach us !!
+          </p>
+
+          <ul>
+
+            <li class="contact-item">
+              <ion-icon name="call-outline"></ion-icon>
+
+              <a href="tel:+919875643901" class="contact-link">+91 9875643901</a>
+            </li>
+
+            <li class="contact-item">
+              <ion-icon name="mail-outline"></ion-icon>
+
+              <a href="mailto:info.tourly.com" class="contact-link">info.tourly.com</a>
+            </li>
+
+            <li class="contact-item">
+              <ion-icon name="location-outline"></ion-icon>
+
+              <address>560064 Bangalore, Karnataka</address>
+            </li>
+
+          </ul>
+
+        </div>
+
+        <div class="footer-form">
+
+          <p class="form-text">
+            Subscribe our newsletter for more update & news !!
+          </p>
+
+          <form action="" class="form-wrapper">
+            <input type="email" name="email" class="input-field" placeholder="Enter Your Email" required>
+
+            <button type="submit" class="btn btn-secondary">Subscribe</button>
+          </form>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+
+        <p class="copyright">
+          &copy; 2022 <a href="">codewithus</a>. All rights reserved
+        </p>
+
+        <ul class="footer-bottom-list">
+
+          <li>
+            <a href="#" class="footer-bottom-link">Privacy Policy</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-bottom-link">Term & Condition</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-bottom-link">FAQ</a>
+          </li>
+
+        </ul>
+
+      </div>
+    </div>
+
+  </footer>
+
+</body>
+</html>
